@@ -145,9 +145,12 @@ main.wide{max-width:var(--content);}
 
 /* ---------- Prototype start page ---------- */
 .eyebrow{font-size:16px;line-height:24px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-70);margin:32px 0 8px;}
-.proto-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:0 0 40px;max-width:var(--content);}
-.proto-card{border:1px solid var(--grey-20);border-top:4px solid var(--brand-blue);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:12px;background:#fff;}
-.proto-card h3{font-size:24px;line-height:32px;margin:0;}
+.proto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,360px));gap:24px;margin:8px 0 40px;max-width:var(--content);}
+.proto-card{border:1px solid var(--grey-20);border-top:4px solid var(--brand-blue);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:12px;background:#fff;text-decoration:none;color:var(--text);min-height:44px;}
+.proto-card:visited{color:var(--text);}
+.proto-card:hover{background:var(--grey-5);border-top-color:var(--link-hover);}
+.proto-card h3{font-size:24px;line-height:32px;margin:0;color:var(--link);text-decoration:underline;text-underline-offset:.15em;}
+.proto-card:hover h3{color:var(--link-hover);}
 .proto-card p{font-size:18px;line-height:28px;margin:0;color:var(--text);}
 .proto-card .proto-actions{margin-top:auto;padding-top:8px;}
 .badge{align-self:flex-start;font-size:14px;line-height:20px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-blue);background:var(--grey-5);border:1px solid var(--grey-20);border-radius:12px;padding:3px 12px;}
@@ -178,35 +181,34 @@ main.wide{max-width:var(--content);}
   <gcds-header lang-href="index.html" skip-to-href="#main-content" signature-has-link="false">
     <gcds-top-nav label="Project Submission Tool" alignment="right" slot="menu">
       <gcds-nav-link href="index.html" slot="home">Project Submission Tool</gcds-nav-link>
-      <!-- PLACEHOLDER: no sign-in in this prototype. Sign out returns to the start page. -->
-      <gcds-nav-link href="index.html">Sign out</gcds-nav-link>
     </gcds-top-nav>
-    <gcds-breadcrumbs slot="breadcrumb" hide-canada-link>
-      <gcds-breadcrumbs-item href="index.html">Custom component testing</gcds-breadcrumbs-item>
-    </gcds-breadcrumbs>
   </gcds-header>
 
   <div class="container grow">
     <main id="main-content">
 
-      <!-- Prototype label and page title -->
-      <p class="eyebrow">Project submission tool &middot; UX prototype</p>
-      <h1 class="gc-pagetitle">Custom component testing</h1>
+      <!-- Page title -->
+      <h1 class="gc-pagetitle">PST prototype testing</h1>
 
       <!-- Introduction -->
-      <p class="gc-intro">A prototype for testing four custom components that are not part of the GC Design System: the character counter, the file uploader, the coordinate type selector and the work and activity selector. Nothing you enter is saved or sent.</p>
+      <p class="gc-intro">Prototypes for testing associated with the design and development of the Project Submission Tool. Nothing you enter is saved or sent.</p>
 
-      <!-- Open the prototype -->
-      <div class="form-actions">
-        <gcds-button type="link" href="project-overview.html" button-role="primary">Open prototype</gcds-button>
+      <!-- Prototypes -->
+      <h2>Prototypes</h2>
+      <div class="proto-grid">
+
+        <a class="proto-card" href="project-overview.html">
+          <h3>Custom component testing</h3>
+          <p>Character counter, file uploader, coordinate type selector, and work and activity selector.</p>
+        </a>
+
       </div>
 
     </main>
   </div>
 
   <!-- Footer -->
-  <!-- PLACEHOLDER: contextual footer links point back to the start page in this prototype. -->
-  <gcds-footer display="compact" contextual-heading="Project Submission Tool" contextual-links='{"Projects near water":"index.html","About":"index.html","Contact the Fish and Fish Habitat Protection Program":"index.html"}'></gcds-footer>
+  <gcds-footer display="compact"></gcds-footer>
 </div>
 
 <script>
