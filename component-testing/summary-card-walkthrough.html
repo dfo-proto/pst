@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summary card walkthrough - 8 states</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans:wght@400;600;700&display=swap">
+<!-- GC Design System v0.47.0 (@cdssnc/gcds-components, MIT), inlined so this file works offline.
+     Components bundled: gcds-heading, gcds-text, gcds-link, gcds-details, gcds-button.
+     In production, load GC DS from the official CDN instead. -->
+<style id="gcds-css">
+:root{--gcds-color-blue-100:#d7e5f5;--gcds-color-blue-500:#6584a6;--gcds-color-blue-650:#284162;--gcds-color-blue-700:#33465c;--gcds-color-blue-750:#1e7b96;--gcds-color-blue-800:#2b4380;--gcds-color-blue-850:#0535d2;--gcds-color-blue-900:#26374a;--gcds-color-grayscale-0:#fff;--gcds-color-grayscale-50:#f1f2f3;--gcds-color-grayscale-100:#d6d9dd;--gcds-color-grayscale-300:#a8adb4;--gcds-color-grayscale-500:#7d828b;--gcds-color-grayscale-700:#545961;--gcds-color-grayscale-800:#43474e;--gcds-color-grayscale-900:#333;--gcds-color-grayscale-1000:#000;--gcds-color-green-100:#e6f6ec;--gcds-color-green-500:#289f58;--gcds-color-green-700:#03662a;--gcds-color-green-800:#023b1a;--gcds-color-purple-700:#7532b8;--gcds-color-orange-700:#be5a00;--gcds-color-red-100:#fbddda;--gcds-color-red-500:#d3080c;--gcds-color-red-700:#a62a1e;--gcds-color-red-900:#822117;--gcds-color-red-flag:#eb2d37;--gcds-color-yellow-100:#faedd1;--gcds-color-yellow-500:#b3800f;--gcds-border-radius-sm:0.125rem;--gcds-border-radius-md:0.375rem;--gcds-border-radius-lg:3rem;--gcds-border-radius-xl:100%;--gcds-border-width-sm:0.0625rem;--gcds-border-width-md:0.125rem;--gcds-border-width-lg:0.25rem;--gcds-border-width-xl:0.375rem;--gcds-border-default:#7d828b;--gcds-active-background:#000;--gcds-active-text:#fff;--gcds-bg-dark:#333;--gcds-bg-light:#f1f2f3;--gcds-bg-primary:#26374a;--gcds-bg-white:#fff;--gcds-danger-background:#fbddda;--gcds-danger-border:#d3080c;--gcds-danger-text:#a62a1e;--gcds-disabled-background:#d6d9dd;--gcds-disabled-text:#545961;--gcds-focus-background:#0535d2;--gcds-focus-border:#0535d2;--gcds-focus-text:#fff;--gcds-link-default:#284162;--gcds-link-hover:#0535d2;--gcds-link-light:#fff;--gcds-link-visited:#7532b8;--gcds-link-focus-background:#0535d2;--gcds-link-focus-outline-width:0.25rem;--gcds-link-focus-outline-offset:0.125rem;--gcds-link-focus-text:#fff;--gcds-link-focus-border-radius:0.125rem;--gcds-link-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-link-font-small-desktop:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-link-font-small-mobile:400 1rem/150% "Noto Sans",sans-serif;--gcds-link-font-regular-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-link-font-regular-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-link-decoration-thickness:0.0625rem;--gcds-link-hover-decoration-thickness:0.125rem;--gcds-link-underline-offset:0.125rem;--gcds-text-light:#fff;--gcds-text-primary:#333;--gcds-text-secondary:#43474e;--gcds-text-character-limit:65ch;--gcds-text-role-light:#fff;--gcds-text-role-primary:#333;--gcds-text-role-secondary:#43474e;--gcds-text-size-body-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-text-size-body-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-text-size-small-desktop:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-text-size-small-mobile:400 1rem/150% "Noto Sans",sans-serif;--gcds-text-spacing-0:0rem;--gcds-text-spacing-25:0.125rem;--gcds-text-spacing-50:0.25rem;--gcds-text-spacing-75:0.375rem;--gcds-text-spacing-100:0.5rem;--gcds-text-spacing-125:0.625rem;--gcds-text-spacing-150:0.75rem;--gcds-text-spacing-175:0.875rem;--gcds-text-spacing-200:1rem;--gcds-text-spacing-225:1.125rem;--gcds-text-spacing-250:1.25rem;--gcds-text-spacing-300:1.5rem;--gcds-text-spacing-350:1.75rem;--gcds-text-spacing-400:2rem;--gcds-text-spacing-450:2.25rem;--gcds-text-spacing-500:2.5rem;--gcds-text-spacing-550:2.75rem;--gcds-text-spacing-600:3rem;--gcds-text-spacing-650:3.25rem;--gcds-text-spacing-700:3.5rem;--gcds-text-spacing-750:3.75rem;--gcds-text-spacing-800:4rem;--gcds-text-spacing-850:4.25rem;--gcds-text-spacing-900:4.5rem;--gcds-text-spacing-950:4.75rem;--gcds-text-spacing-1000:5rem;--gcds-text-spacing-1050:5.25rem;--gcds-text-spacing-1100:5.5rem;--gcds-text-spacing-1150:5.75rem;--gcds-text-spacing-1200:6rem;--gcds-text-spacing-1250:6.25rem;--gcds-text-weight-bold:700;--gcds-container-xs:20rem;--gcds-container-sm:30rem;--gcds-container-md:48rem;--gcds-container-lg:62rem;--gcds-container-xl:71.25rem;--gcds-container-full:100%;--gcds-container-border:0.0625rem solid #7d828b;--gcds-container-size-xs:20rem;--gcds-container-size-sm:30rem;--gcds-container-size-md:48rem;--gcds-container-size-lg:62rem;--gcds-container-size-xl:71.25rem;--gcds-container-size-full:100%;--gcds-container-spacing-0:0rem;--gcds-container-spacing-25:0.125rem;--gcds-container-spacing-50:0.25rem;--gcds-container-spacing-75:0.375rem;--gcds-container-spacing-100:0.5rem;--gcds-container-spacing-125:0.625rem;--gcds-container-spacing-150:0.75rem;--gcds-container-spacing-175:0.875rem;--gcds-container-spacing-200:1rem;--gcds-container-spacing-225:1.125rem;--gcds-container-spacing-250:1.25rem;--gcds-container-spacing-300:1.5rem;--gcds-container-spacing-350:1.75rem;--gcds-container-spacing-400:2rem;--gcds-container-spacing-450:2.25rem;--gcds-container-spacing-500:2.5rem;--gcds-container-spacing-550:2.75rem;--gcds-container-spacing-600:3rem;--gcds-container-spacing-650:3.25rem;--gcds-container-spacing-700:3.5rem;--gcds-container-spacing-750:3.75rem;--gcds-container-spacing-800:4rem;--gcds-container-spacing-850:4.25rem;--gcds-container-spacing-900:4.5rem;--gcds-container-spacing-950:4.75rem;--gcds-container-spacing-1000:5rem;--gcds-container-spacing-1050:5.25rem;--gcds-container-spacing-1100:5.5rem;--gcds-container-spacing-1150:5.75rem;--gcds-container-spacing-1200:6rem;--gcds-container-spacing-1250:6.25rem;--gcds-outline-width:0.25rem;--gcds-spacing-0:0rem;--gcds-spacing-25:0.125rem;--gcds-spacing-50:0.25rem;--gcds-spacing-75:0.375rem;--gcds-spacing-100:0.5rem;--gcds-spacing-125:0.625rem;--gcds-spacing-150:0.75rem;--gcds-spacing-175:0.875rem;--gcds-spacing-200:1rem;--gcds-spacing-225:1.125rem;--gcds-spacing-250:1.25rem;--gcds-spacing-300:1.5rem;--gcds-spacing-350:1.75rem;--gcds-spacing-400:2rem;--gcds-spacing-450:2.25rem;--gcds-spacing-500:2.5rem;--gcds-spacing-550:2.75rem;--gcds-spacing-600:3rem;--gcds-spacing-650:3.25rem;--gcds-spacing-700:3.5rem;--gcds-spacing-750:3.75rem;--gcds-spacing-800:4rem;--gcds-spacing-850:4.25rem;--gcds-spacing-900:4.5rem;--gcds-spacing-950:4.75rem;--gcds-spacing-1000:5rem;--gcds-spacing-1050:5.25rem;--gcds-spacing-1100:5.5rem;--gcds-spacing-1150:5.75rem;--gcds-spacing-1200:6rem;--gcds-spacing-1250:6.25rem;--gcds-base-root-font-size:16;--gcds-base-font-size:1.25;--gcds-base-font-size-mobile:1.125;--gcds-base-line-height:1.6;--gcds-base-scale:1.1;--gcds-font-h1:700 2.5625rem/117% "Lato",sans-serif;--gcds-font-h1-mobile:700 2.3125rem/119% "Lato",sans-serif;--gcds-font-h2:700 2.4375rem/123% "Lato",sans-serif;--gcds-font-h2-mobile:700 2.1875rem/125% "Lato",sans-serif;--gcds-font-h3:700 1.8125rem/137% "Lato",sans-serif;--gcds-font-h3-mobile:700 1.625rem/123% "Lato",sans-serif;--gcds-font-h4:700 1.6875rem/133% "Lato",sans-serif;--gcds-font-h4-mobile:700 1.5rem/133% "Lato",sans-serif;--gcds-font-h5:700 1.5rem/133% "Lato",sans-serif;--gcds-font-h5-mobile:700 1.375rem/127% "Lato",sans-serif;--gcds-font-h6:700 1.375rem/145% "Lato",sans-serif;--gcds-font-h6-mobile:700 1.25rem/140% "Lato",sans-serif;--gcds-font-text:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-font-text-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-font-text-mono:400 1.25rem/160% "Noto Sans Mono",monospace;--gcds-font-text-mono-mobile:400 1.125rem/155% "Noto Sans Mono",monospace;--gcds-font-text-small:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-font-text-small-mobile:400 1rem/150% "Noto Sans",sans-serif;--gcds-font-families-heading:"Lato",sans-serif;--gcds-font-families-body:"Noto Sans",sans-serif;--gcds-font-families-monospace:"Noto Sans Mono",monospace;--gcds-font-families-icons:"gcds-icons";--gcds-font-sizes-text-small:1.125rem;--gcds-font-sizes-text-small-mobile:1rem;--gcds-font-sizes-text:1.25rem;--gcds-font-sizes-text-mobile:1.125rem;--gcds-font-sizes-h1:2.5625rem;--gcds-font-sizes-h1-mobile:2.3125rem;--gcds-font-sizes-h2:2.4375rem;--gcds-font-sizes-h2-mobile:2.1875rem;--gcds-font-sizes-h3:1.8125rem;--gcds-font-sizes-h3-mobile:1.625rem;--gcds-font-sizes-h4:1.6875rem;--gcds-font-sizes-h4-mobile:1.5rem;--gcds-font-sizes-h5:1.5rem;--gcds-font-sizes-h5-mobile:1.375rem;--gcds-font-sizes-h6:1.375rem;--gcds-font-sizes-h6-mobile:1.25rem;--gcds-font-weights-light:300;--gcds-font-weights-regular:400;--gcds-font-weights-medium:500;--gcds-font-weights-semibold:600;--gcds-font-weights-bold:700;--gcds-line-heights-text-small:155%;--gcds-line-heights-text-small-mobile:150%;--gcds-line-heights-text:160%;--gcds-line-heights-text-mobile:155%;--gcds-line-heights-h1:117%;--gcds-line-heights-h1-mobile:119%;--gcds-line-heights-h2:123%;--gcds-line-heights-h2-mobile:125%;--gcds-line-heights-h3:137%;--gcds-line-heights-h3-mobile:123%;--gcds-line-heights-h4:133%;--gcds-line-heights-h4-mobile:133%;--gcds-line-heights-h5:133%;--gcds-line-heights-h5-mobile:127%;--gcds-line-heights-h6:145%;--gcds-line-heights-h6-mobile:140%;--gcds-alert-border-width:0.375rem;--gcds-alert-button-border-radius:0.375rem;--gcds-alert-button-border-width:0.125rem;--gcds-alert-button-default-background:#fff;--gcds-alert-button-default-text:#333;--gcds-alert-button-focus-background:#0535d2;--gcds-alert-button-focus-text:#fff;--gcds-alert-button-icon-padding:0.75rem;--gcds-alert-button-icon-width-and-height:1.125rem;--gcds-alert-button-margin:0 0 0 0.875rem;--gcds-alert-button-mobile-margin:0.875rem 0 0;--gcds-alert-button-outline-width:0.25rem;--gcds-alert-content-heading-font:700 1.5rem/133% "Lato",sans-serif;--gcds-alert-content-heading-margin:0 0 0.5rem;--gcds-alert-content-heading-mobile-margin:0 0 0.5rem;--gcds-alert-content-slotted-list-margin:1.5rem;--gcds-alert-content-slotted-margin:0.5rem;--gcds-alert-font:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-alert-icon-font-size:2.25rem;--gcds-alert-icon-mobile-margin:0 0 0.875rem;--gcds-alert-padding:0.75rem 0.875rem;--gcds-alert-text:#333;--gcds-alert-danger-background:#fbddda;--gcds-alert-danger-icon:#d3080c;--gcds-alert-danger-text:#333;--gcds-alert-info-background:#d7e5f5;--gcds-alert-info-icon:#6584a6;--gcds-alert-info-text:#333;--gcds-alert-success-background:#e6f6ec;--gcds-alert-success-icon:#289f58;--gcds-alert-success-text:#333;--gcds-alert-warning-background:#faedd1;--gcds-alert-warning-icon:#b3800f;--gcds-alert-warning-text:#333;--gcds-breadcrumbs-item-arrow-margin:0 0.5rem 0 0;--gcds-breadcrumbs-item-font:400 1rem/150% "Noto Sans",sans-serif;--gcds-breadcrumbs-item-margin:0.5rem 0.25rem 0.5rem 0.125rem;--gcds-breadcrumbs-margin:0 0 0 -0.125rem;--gcds-breadcrumbs-padding:0 0 0 0.125rem;--gcds-button-border-radius:0.375rem;--gcds-button-border-width:0.125rem;--gcds-button-danger-default-background:#a62a1e;--gcds-button-danger-default-text:#fff;--gcds-button-danger-hover-background:#822117;--gcds-button-font-desktop:500 1.25rem/140% "Noto Sans",sans-serif;--gcds-button-font-mobile:500 1.125rem/140% "Noto Sans",sans-serif;--gcds-button-padding:0.625rem 1rem;--gcds-button-primary-default-background:#26374a;--gcds-button-primary-default-text:#fff;--gcds-button-primary-hover-background:#2b4380;--gcds-button-secondary-default-background:transparent;--gcds-button-secondary-default-text:#2b4380;--gcds-button-secondary-hover-background:#d7e5f5;--gcds-button-secondary-active-background:#d7e5f5;--gcds-button-mobile-margin:0.125rem 0;--gcds-button-mobile-width:100%;--gcds-button-shared-active-background:#000;--gcds-button-shared-active-text:#fff;--gcds-button-shared-focus-background:#0535d2;--gcds-button-shared-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-button-shared-focus-outline-width:0.25rem;--gcds-button-shared-focus-text:#fff;--gcds-button-shared-disabled-opacity:50%;--gcds-button-small-font-desktop:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-button-small-font-mobile:400 1rem/150% "Noto Sans",sans-serif;--gcds-button-small-padding:0.375rem 1rem;--gcds-button-start-default-background:#03662a;--gcds-button-start-default-text:#fff;--gcds-button-start-hover-background:#023b1a;--gcds-button-start-font-desktop:600 1.375rem/145% "Noto Sans",sans-serif;--gcds-button-start-font-mobile:500 1.25rem/140% "Noto Sans",sans-serif;--gcds-button-start-padding:0.75rem 2rem;--gcds-button-width:fit-content;--gcds-card-background-color:#fff;--gcds-card-box-shadow:0 0.125rem 0.5rem 0.125rem #00000019;--gcds-card-color:#333;--gcds-card-description-font-desktop:400 1.25rem/155% "Noto Sans",sans-serif;--gcds-card-description-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-card-focus-box-shadow:inset 0 0 0 0.125rem #0535d2;--gcds-card-focus-link-background-color:transparent;--gcds-card-focus-link-border:none;--gcds-card-focus-link-box-shadow:none;--gcds-card-focus-link-color:#284162;--gcds-card-focus-link-outline:none;--gcds-card-focus-link-text-decoration-thickness:0.125rem;--gcds-card-focus-outline-offset:0.125rem;--gcds-card-focus-outline:0.25rem solid #0535d2;--gcds-card-hover-background-color:#f1f2f380;--gcds-card-hover-box-shadow:0 0.25rem 0.5rem 0.25rem #00000032;--gcds-card-image-margin:0 0 1.5rem;--gcds-card-padding:2.25rem 1.5rem;--gcds-card-badge-background-color:#20809d;--gcds-card-badge-padding:0 1.5rem;--gcds-card-badge-mobile-padding:0.125rem 1.5rem;--gcds-card-title-font-desktop:700 1.8125rem/137% "Lato",sans-serif;--gcds-card-title-font-mobile:700 1.625rem/123% "Lato",sans-serif;--gcds-card-title-margin:0 0 0.625rem;--gcds-card-max-width:34.125rem;--gcds-checkbox-check-border-width:0.3125rem;--gcds-checkbox-check-height:1.5rem;--gcds-checkbox-check-left:1rem;--gcds-checkbox-check-top:0.625rem;--gcds-checkbox-check-width:0.875rem;--gcds-checkbox-danger-border:#d3080c;--gcds-checkbox-default-background:#fff;--gcds-checkbox-default-text:#333;--gcds-checkbox-disabled-background:#d6d9dd;--gcds-checkbox-disabled-border:#545961;--gcds-checkbox-disabled-text:#545961;--gcds-checkbox-error-padding:0 0 0 3.75rem;--gcds-checkbox-fieldset-margin:0 0 1rem;--gcds-checkbox-focus-background:#fff;--gcds-checkbox-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-checkbox-focus-color:#0535d2;--gcds-checkbox-focus-outline-width:0.25rem;--gcds-checkbox-font:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-checkbox-input-border-radius:0.125rem;--gcds-checkbox-input-border-width:0.125rem;--gcds-checkbox-input-height-and-width:3rem;--gcds-checkbox-label-font-desktop:500 1.25rem/160% "Noto Sans",sans-serif;--gcds-checkbox-label-font-mobile:500 1.125rem/155% "Noto Sans",sans-serif;--gcds-checkbox-label-padding:0 0 0 3.75rem;--gcds-checkbox-legend-font-desktop:700 1.25rem/160% "Noto Sans",sans-serif;--gcds-checkbox-legend-font-mobile:700 1.125rem/155% "Noto Sans",sans-serif;--gcds-checkbox-legend-hint-margin:0 0 1rem;--gcds-checkbox-legend-margin:0 0 0.125rem;--gcds-checkbox-legend-required-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-checkbox-legend-required-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-checkbox-margin:0 0 1.125rem;--gcds-checkbox-max-width:46.5rem;--gcds-checkbox-padding:0.5rem;--gcds-date-input-danger-border:#d3080c;--gcds-date-input-fieldset-font-desktop:700 1.25rem/160% "Noto Sans",sans-serif;--gcds-date-input-fieldset-font-mobile:700 1.125rem/155% "Noto Sans",sans-serif;--gcds-date-input-fieldset-error-margin:0;--gcds-date-input-fieldset-hint-margin:0.375rem 0 0.125rem;--gcds-date-input-fieldset-margin:0 0 1.125rem;--gcds-date-input-fieldset-required-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-date-input-fieldset-required-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-date-input-fieldset-required-margin:0 0 0 0.375rem;--gcds-date-input-fieldset-text:#333;--gcds-date-input-label-font-desktop:500 1.25rem/160% "Noto Sans",sans-serif;--gcds-date-input-label-font-mobile:500 1.125rem/155% "Noto Sans",sans-serif;--gcds-date-input-margin:0.75rem;--gcds-date-modified-description-margin:0 0 0 0.125rem;--gcds-date-modified-font:400 1rem/150% "Noto Sans",sans-serif;--gcds-date-modified-margin:2.5rem 0 1rem;--gcds-details-default-text:#284162;--gcds-details-default-decoration-thickness:0.0625rem;--gcds-details-focus-background:#0535d2;--gcds-details-focus-text:#fff;--gcds-details-focus-border-radius:0.125rem;--gcds-details-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-details-focus-outline-offset:0.125rem;--gcds-details-focus-outline:0.25rem solid #0535d2;--gcds-details-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-details-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-details-font-small-desktop:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-details-font-small-mobile:400 1rem/150% "Noto Sans",sans-serif;--gcds-details-hover-text:#0535d2;--gcds-details-hover-decoration-thickness:0.125rem;--gcds-details-panel-border-color:#7d828b;--gcds-details-panel-border-width:0.375rem;--gcds-details-panel-margin:0.75rem 0 0 0.75rem;--gcds-details-panel-padding:0.75rem 0rem 0.75rem 1.75rem;--gcds-details-panel-slotted-margin:1.5rem;--gcds-details-print-summary-font-weight:600;--gcds-details-print-summary-text:#333;--gcds-details-summary-arrow-border-left:0.875rem;--gcds-details-summary-arrow-border-top-bottom:0.5rem;--gcds-details-summary-arrow-left:0.375rem;--gcds-details-summary-arrow-top:0.875rem;--gcds-details-summary-border-width:0.0625rem;--gcds-details-summary-padding:0.375rem 0.375rem 0.375rem 2.5rem;--gcds-error-message-text-color:#a62a1e;--gcds-error-summary-border-color:#d3080c;--gcds-error-summary-border-width:0.375rem;--gcds-error-summary-link-color:#a62a1e;--gcds-error-summary-list-item-padding:0 0 0.75rem 0.125rem;--gcds-error-summary-list-margin:0 0 0 1.25rem;--gcds-error-summary-margin:0 0 2.25rem;--gcds-error-summary-max-width:65ch;--gcds-error-summary-text:#333;--gcds-error-summary-mobile-padding:1.125rem;--gcds-error-summary-padding:2.5rem;--gcds-fieldset-default-text:#333;--gcds-fieldset-legend-margin:0 0 0.125rem;--gcds-fieldset-legend-size-h2-desktop:700 2.4375rem/123% "Lato",sans-serif;--gcds-fieldset-legend-size-h2-mobile:700 2.1875rem/125% "Lato",sans-serif;--gcds-fieldset-legend-size-h3-desktop:700 1.8125rem/137% "Lato",sans-serif;--gcds-fieldset-legend-size-h3-mobile:700 1.625rem/123% "Lato",sans-serif;--gcds-fieldset-legend-size-h4-desktop:700 1.6875rem/133% "Lato",sans-serif;--gcds-fieldset-legend-size-h4-mobile:700 1.5rem/133% "Lato",sans-serif;--gcds-fieldset-legend-size-h5-desktop:700 1.5rem/133% "Lato",sans-serif;--gcds-fieldset-legend-size-h5-mobile:700 1.375rem/127% "Lato",sans-serif;--gcds-fieldset-legend-size-h6-desktop:700 1.375rem/145% "Lato",sans-serif;--gcds-fieldset-legend-size-h6-mobile:700 1.25rem/140% "Lato",sans-serif;--gcds-file-uploader-button-background:#fff;--gcds-file-uploader-button-border-radius:0.375rem;--gcds-file-uploader-button-border-width:0.125rem;--gcds-file-uploader-button-font-weight:500;--gcds-file-uploader-button-outline-width:0.25rem;--gcds-file-uploader-button-margin:0 0 1.125rem;--gcds-file-uploader-button-padding:0.625rem 0.75rem;--gcds-file-uploader-button-text:#2b4380;--gcds-file-uploader-default-text:#333;--gcds-file-uploader-disabled-background:#d6d9dd;--gcds-file-uploader-disabled-text:#545961;--gcds-file-uploader-font-desktop:400 1.25rem/140% "Noto Sans",sans-serif;--gcds-file-uploader-font-mobile:400 1.125rem/140% "Noto Sans",sans-serif;--gcds-file-uploader-file-border-color:#7d828b;--gcds-file-uploader-file-border-width:0.125rem;--gcds-file-uploader-file-button-border-width:0.0625rem;--gcds-file-uploader-file-button-border-radius:0.375rem;--gcds-file-uploader-file-button-underline-offset:0.25rem;--gcds-file-uploader-file-button-default-text:#a62a1e;--gcds-file-uploader-file-button-default-decoration-thickness:0.0625rem;--gcds-file-uploader-file-button-hover-text:#822117;--gcds-file-uploader-file-button-hover-decoration-thickness:0.125rem;--gcds-file-uploader-file-button-margin:0 0 0 2.25rem;--gcds-file-uploader-file-button-padding:0.375rem 0.125rem;--gcds-file-uploader-file-danger-border-color:#d3080c;--gcds-file-uploader-file-focus-border-color:#0535d2;--gcds-file-uploader-file-max-width:30rem;--gcds-file-uploader-file-padding:0.75rem 1.125rem;--gcds-file-uploader-focus-button-background:#0535d2;--gcds-file-uploader-focus-button-text:#fff;--gcds-file-uploader-focus-button-outline-width:0.25rem;--gcds-file-uploader-focus-button-outline-offset:0.125rem;--gcds-file-uploader-hover-button-background:#d7e5f5;--gcds-file-uploader-active-button-background:#000;--gcds-file-uploader-active-button-text:#fff;--gcds-footer-band-padding-desktop:2.25rem 0;--gcds-footer-band-padding-mobile:1.5rem 0;--gcds-footer-container-margin:0 auto;--gcds-footer-container-width:71.25rem;--gcds-footer-contextual-background:#33465c;--gcds-footer-contextual-text:#fff;--gcds-footer-font:400 1rem/150% "Noto Sans",sans-serif;--gcds-footer-font-heading:700 1.625rem/123% "Lato",sans-serif;--gcds-footer-grid-gap:1.5rem;--gcds-footer-heading-margin:0 0 1.5rem;--gcds-footer-list-padding:0;--gcds-footer-main-background:#26374a;--gcds-footer-main-nav-first-after-border-color:#fff;--gcds-footer-main-nav-first-after-border-width:0.25rem;--gcds-footer-main-nav-first-after-width:2.25rem;--gcds-footer-main-text:#fff;--gcds-footer-sub-background:#f1f2f3;--gcds-footer-sub-listitem-before-margin:0 0.75rem;--gcds-footer-sub-signature-width:10.25rem;--gcds-footer-sub-signature-min-width:auto;--gcds-footer-sub-signature-max-height:2.4375rem;--gcds-footer-sub-signature-margin:0 0 0 auto;--gcds-footer-sub-signature-sm-width:6.25rem;--gcds-footer-sub-signature-sm-max-height:1.5rem;--gcds-grid-columns-default-base:1;--gcds-grid-columns-default-tablet:6;--gcds-grid-columns-default-desktop:12;--gcds-grid-gap-150:0.75rem;--gcds-grid-gap-175:0.875rem;--gcds-grid-gap-200:1rem;--gcds-grid-gap-225:1.125rem;--gcds-grid-gap-250:1.25rem;--gcds-grid-gap-300:1.5rem;--gcds-grid-gap-350:1.75rem;--gcds-grid-gap-400:2rem;--gcds-grid-gap-450:2.25rem;--gcds-grid-gap-500:2.5rem;--gcds-grid-gap-550:2.75rem;--gcds-grid-gap-600:3rem;--gcds-grid-gap-650:3.25rem;--gcds-grid-gap-700:3.5rem;--gcds-grid-gap-750:3.75rem;--gcds-grid-gap-800:4rem;--gcds-header-brand-border-color:#d6d9dd;--gcds-header-brand-border-width:0.0625rem;--gcds-header-brand-grid-gap:0.5rem;--gcds-header-brand-padding:0.5rem 0 1rem;--gcds-header-brand-toggle-padding:0 1.125rem;--gcds-header-container-max-width:71.25rem;--gcds-header-margin:0 0 3rem;--gcds-header-menu-top-nav-mobile-trigger-margin:1rem;--gcds-header-skiptonav-top:0.75rem;--gcds-heading-character-limit-h1:31ch;--gcds-heading-character-limit-h2:35ch;--gcds-heading-character-limit-h3:40ch;--gcds-heading-character-limit-h4:45ch;--gcds-heading-character-limit-h5:50ch;--gcds-heading-character-limit-h6:57ch;--gcds-heading-default-text:#333;--gcds-heading-h1-border-background:#a62a1e;--gcds-heading-h1-border-height:0.375rem;--gcds-heading-h1-border-margin:0.5rem;--gcds-heading-h1-border-width:4.5rem;--gcds-heading-h1-desktop:700 2.5625rem/117% "Lato",sans-serif;--gcds-heading-h1-mobile:700 2.3125rem/119% "Lato",sans-serif;--gcds-heading-h2-desktop:700 2.4375rem/123% "Lato",sans-serif;--gcds-heading-h2-mobile:700 2.1875rem/125% "Lato",sans-serif;--gcds-heading-h3-desktop:700 1.8125rem/137% "Lato",sans-serif;--gcds-heading-h3-mobile:700 1.625rem/123% "Lato",sans-serif;--gcds-heading-h4-desktop:700 1.6875rem/133% "Lato",sans-serif;--gcds-heading-h4-mobile:700 1.5rem/133% "Lato",sans-serif;--gcds-heading-h5-desktop:700 1.5rem/133% "Lato",sans-serif;--gcds-heading-h5-mobile:700 1.375rem/127% "Lato",sans-serif;--gcds-heading-h6-desktop:700 1.375rem/145% "Lato",sans-serif;--gcds-heading-h6-mobile:700 1.25rem/140% "Lato",sans-serif;--gcds-heading-role-light:#fff;--gcds-heading-role-primary:#333;--gcds-heading-role-secondary:#43474e;--gcds-heading-spacing-0:0rem;--gcds-heading-spacing-25:0.125rem;--gcds-heading-spacing-50:0.25rem;--gcds-heading-spacing-75:0.375rem;--gcds-heading-spacing-100:0.5rem;--gcds-heading-spacing-125:0.625rem;--gcds-heading-spacing-150:0.75rem;--gcds-heading-spacing-175:0.875rem;--gcds-heading-spacing-200:1rem;--gcds-heading-spacing-225:1.125rem;--gcds-heading-spacing-250:1.25rem;--gcds-heading-spacing-300:1.5rem;--gcds-heading-spacing-350:1.75rem;--gcds-heading-spacing-400:2rem;--gcds-heading-spacing-450:2.25rem;--gcds-heading-spacing-500:2.5rem;--gcds-heading-spacing-550:2.75rem;--gcds-heading-spacing-600:3rem;--gcds-heading-spacing-650:3.25rem;--gcds-heading-spacing-700:3.5rem;--gcds-heading-spacing-750:3.75rem;--gcds-heading-spacing-800:4rem;--gcds-heading-spacing-850:4.25rem;--gcds-heading-spacing-900:4.5rem;--gcds-heading-spacing-950:4.75rem;--gcds-heading-spacing-1000:5rem;--gcds-heading-spacing-1050:5.25rem;--gcds-heading-spacing-1100:5.5rem;--gcds-heading-spacing-1150:5.75rem;--gcds-heading-spacing-1200:6rem;--gcds-heading-spacing-1250:6.25rem;--gcds-hint-margin:-0.375rem 0 0.5rem;--gcds-hint-text:#43474e;--gcds-icon-font-family:"gcds-icons";--gcds-icon-font-size-text-small:1.125rem;--gcds-icon-font-size-text:1.25rem;--gcds-icon-font-size-h6:1.375rem;--gcds-icon-font-size-h5:1.5rem;--gcds-icon-font-size-h4:1.6875rem;--gcds-icon-font-size-h3:1.8125rem;--gcds-icon-font-size-h2:2.4375rem;--gcds-icon-font-size-h1:2.5625rem;--gcds-icon-font-size-text-small-mobile:1rem;--gcds-icon-font-size-text-mobile:1.125rem;--gcds-icon-font-size-h6-mobile:1.25rem;--gcds-icon-font-size-h5-mobile:1.375rem;--gcds-icon-font-size-h4-mobile:1.5rem;--gcds-icon-font-size-h3-mobile:1.625rem;--gcds-icon-font-size-h2-mobile:2.1875rem;--gcds-icon-font-size-h1-mobile:2.3125rem;--gcds-icon-line-height-text-small:155%;--gcds-icon-line-height-text:160%;--gcds-icon-line-height-h6:145%;--gcds-icon-line-height-h5:133%;--gcds-icon-line-height-h4:133%;--gcds-icon-line-height-h3:137%;--gcds-icon-line-height-h2:123%;--gcds-icon-line-height-h1:117%;--gcds-icon-line-height-text-small-mobile:150%;--gcds-icon-line-height-text-mobile:155%;--gcds-icon-line-height-h6-mobile:140%;--gcds-icon-line-height-h5-mobile:127%;--gcds-icon-line-height-h4-mobile:133%;--gcds-icon-line-height-h3-mobile:123%;--gcds-icon-line-height-h2-mobile:125%;--gcds-icon-line-height-h1-mobile:119%;--gcds-icon-margin-0:0rem;--gcds-icon-margin-25:0.125rem;--gcds-icon-margin-50:0.25rem;--gcds-icon-margin-75:0.375rem;--gcds-icon-margin-100:0.5rem;--gcds-icon-margin-125:0.625rem;--gcds-icon-margin-150:0.75rem;--gcds-icon-margin-175:0.875rem;--gcds-icon-margin-200:1rem;--gcds-icon-margin-225:1.125rem;--gcds-icon-margin-250:1.25rem;--gcds-icon-margin-300:1.5rem;--gcds-icon-margin-350:1.75rem;--gcds-icon-margin-400:2rem;--gcds-icon-margin-450:2.25rem;--gcds-icon-margin-500:2.5rem;--gcds-icon-margin-550:2.75rem;--gcds-icon-margin-600:3rem;--gcds-icon-margin-650:3.25rem;--gcds-icon-margin-700:3.5rem;--gcds-icon-margin-750:3.75rem;--gcds-icon-margin-800:4rem;--gcds-icon-margin-850:4.25rem;--gcds-icon-margin-900:4.5rem;--gcds-icon-margin-950:4.75rem;--gcds-icon-margin-1000:5rem;--gcds-icon-margin-1050:5.25rem;--gcds-icon-margin-1100:5.5rem;--gcds-icon-margin-1150:5.75rem;--gcds-icon-margin-1200:6rem;--gcds-icon-margin-1250:6.25rem;--gcds-input-border-radius:0.125rem;--gcds-input-border-width:0.125rem;--gcds-input-danger-border:#d3080c;--gcds-input-default-background:#fff;--gcds-input-default-text:#333;--gcds-input-disabled-background:#d6d9dd;--gcds-input-disabled-text:#545961;--gcds-input-focus-border:#0535d2;--gcds-input-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-input-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-input-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-input-margin:0 0 1.5rem;--gcds-input-min-width-and-height:3rem;--gcds-input-outline-width:0.25rem;--gcds-input-padding:0.5rem;--gcds-label-font-desktop:600 1.25rem/160% "Noto Sans",sans-serif;--gcds-label-font-mobile:600 1.125rem/155% "Noto Sans",sans-serif;--gcds-label-margin:0 0 0.5rem;--gcds-label-required-font-weight:400;--gcds-label-required-margin:0 0 0 0.375rem;--gcds-label-text:#333;--gcds-lang-toggle-font-desktop:400 1rem/150% "Noto Sans",sans-serif;--gcds-lang-toggle-font-mobile:700 1.125rem/155% "Noto Sans",sans-serif;--gcds-lang-toggle-padding:0.375rem 0.625rem;--gcds-nav-group-font:500 1rem/150% "Noto Sans",sans-serif;--gcds-nav-group-mobile-background:#fff;--gcds-nav-group-mobile-list-margin:0.875rem 0 0;--gcds-nav-group-mobile-padding:0.5rem 0.875rem 4.75rem 0.875rem;--gcds-nav-group-mobile-trigger-border-radius:0.375rem;--gcds-nav-group-mobile-trigger-border-width:0.125rem;--gcds-nav-group-mobile-trigger-margin:0.5rem;--gcds-nav-group-mobile-trigger-text:#2b4380;--gcds-nav-group-side-nav-dropdown-padding:1.75rem;--gcds-nav-group-side-nav-trigger-font-weight:600;--gcds-nav-group-side-nav-trigger-hover-background:#f1f2f3;--gcds-nav-group-side-nav-trigger-icon-margin:0.5rem;--gcds-nav-group-side-nav-trigger-margin:0.5rem;--gcds-nav-group-top-nav-dropdown-background:#fff;--gcds-nav-group-top-nav-dropdown-box-shadow:0 0 0.5rem rgba(0,0,0,.25);--gcds-nav-group-top-nav-dropdown-padding:0.75rem 0.75rem 0.125rem;--gcds-nav-group-top-nav-dropdown-width:20rem;--gcds-nav-group-top-nav-trigger-hover-background:#d6d9dd;--gcds-nav-group-top-nav-trigger-hover-text:#0535d2;--gcds-nav-group-top-nav-trigger-hover-decoration-thickness:0.125rem;--gcds-nav-group-top-nav-trigger-decoration-thickness:0.0625rem;--gcds-nav-group-top-nav-trigger-underline-offset:0.25rem;--gcds-nav-group-top-nav-trigger-expanded-background-color:#d6d9dd;--gcds-nav-group-top-nav-trigger-icon-margin:0.5rem;--gcds-nav-group-top-nav-trigger-padding:1.125rem 1rem;--gcds-nav-group-trigger-focus-background:#0535d2;--gcds-nav-group-trigger-focus-text:#fff;--gcds-nav-group-trigger-focus-border-radius:0.125rem;--gcds-nav-group-trigger-focus-outline-offset:0.125rem;--gcds-nav-group-trigger-focus-outline:0.25rem solid #0535d2;--gcds-nav-group-trigger-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-nav-group-trigger-hover-text:#0535d2;--gcds-nav-group-trigger-max-width:20rem;--gcds-nav-group-trigger-padding:0.625rem 0.75rem;--gcds-nav-group-trigger-text:#333;--gcds-nav-link-active-border-color:#33465c;--gcds-nav-link-active-font-weight:700;--gcds-nav-link-active-text:#26374a;--gcds-nav-link-active-background:#d7e5f5;--gcds-nav-link-border-width:0.125rem;--gcds-nav-link-default-text:#284162;--gcds-nav-link-default-decoration-thickness:0.0625rem;--gcds-nav-link-default-max-width:20rem;--gcds-nav-link-default-underline-offset:0.25rem;--gcds-nav-link-focus-background:#0535d2;--gcds-nav-link-focus-text:#fff;--gcds-nav-link-focus-border-radius:0.125rem;--gcds-nav-link-focus-outline-offset:0.125rem;--gcds-nav-link-focus-outline:0.25rem solid #0535d2;--gcds-nav-link-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-nav-link-font:500 1rem/150% "Noto Sans",sans-serif;--gcds-nav-link-hover-decoration-thickness:0.125rem;--gcds-nav-link-hover-text:#0535d2;--gcds-nav-link-margin:0.5rem;--gcds-nav-link-padding:0.625rem;--gcds-nav-link-side-nav-hover-background:#f1f2f3;--gcds-nav-link-side-nav-padding:0.625rem 0.5rem;--gcds-nav-link-top-nav-hover-background:#d6d9dd;--gcds-nav-link-top-nav-home-font:700 1rem/150% "Noto Sans",sans-serif;--gcds-nav-link-top-nav-home-padding:1rem 0.125rem;--gcds-nav-link-top-nav-padding:1rem;--gcds-nav-link-top-nav-text:#333;--gcds-nav-link-top-nav-margin:0;--gcds-notice-border-width:0.375rem;--gcds-notice-content-heading-font-desktop:700 1.8125rem/137% "Lato",sans-serif;--gcds-notice-content-heading-font-mobile:700 1.625rem/123% "Lato",sans-serif;--gcds-notice-content-heading-margin-block-start-desktop:1rem;--gcds-notice-content-heading-margin-block-start-mobile:1.25rem;--gcds-notice-content-slotted-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-notice-content-slotted-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-notice-content-slotted-list-margin:1.5rem;--gcds-notice-content-slotted-margin:0.5rem;--gcds-notice-danger-text:#a62a1e;--gcds-notice-icon-after-height:calc(100% - 3.5rem);--gcds-notice-icon-before-height:1.125rem;--gcds-notice-icon-gap:0.875rem;--gcds-notice-icon-margin:0.125rem auto 0;--gcds-notice-icon-width:2.25rem;--gcds-notice-info-text:#1e7b96;--gcds-notice-text:#333;--gcds-notice-success-text:#03662a;--gcds-notice-warning-text:#be5a00;--gcds-pagination-active-text:#fff;--gcds-pagination-active-background:#26374a;--gcds-pagination-border-radius:0.125rem;--gcds-pagination-border-width:0.125rem;--gcds-pagination-default-text:#284162;--gcds-pagination-hover-background:#d7e5f5;--gcds-pagination-hover-text:#0535d2;--gcds-pagination-focus-background:#0535d2;--gcds-pagination-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-pagination-focus-text:#fff;--gcds-pagination-focus-outline-width:0.25rem;--gcds-pagination-font-desktop:500 1.25rem/160% "Noto Sans",sans-serif;--gcds-pagination-font-mobile:500 1.125rem/155% "Noto Sans",sans-serif;--gcds-pagination-list-end-button-padding:0.5rem;--gcds-pagination-listitem-margin:0.375rem;--gcds-pagination-mobile-list-border:#284162;--gcds-pagination-mobile-list-item-margin:0.125rem;--gcds-pagination-mobile-list-prevnext-margin:0.75rem auto 0;--gcds-pagination-simple-label-font-weight:400;--gcds-pagination-simple-listitem-divider-border:0.0625rem solid #a8adb4;--gcds-pagination-simple-listitem-divider-margin:1rem;--gcds-pagination-simple-listitem-divider-padding:0 0 1rem 0;--gcds-pagination-simple-listitem-margin:0;--gcds-pagination-simple-listitem-text-margin:0 0 0.125rem;--gcds-pagination-simple-padding:0.5rem 0.75rem 0.5rem 0.125rem;--gcds-phase-banner-details-cta-margin:0 0 0 0.875rem;--gcds-phase-banner-font:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-phase-banner-icon-margin:1.125rem;--gcds-phase-banner-icon-max-height:1.125rem;--gcds-phase-banner-padding:0.875rem;--gcds-phase-banner-primary-background:#26374a;--gcds-phase-banner-primary-text:#fff;--gcds-phase-banner-secondary-background:#f1f2f3;--gcds-phase-banner-secondary-text:#333;--gcds-radio-border-radius:100%;--gcds-radio-check-border-width:0.3125rem;--gcds-radio-check-height-and-width:1.125rem;--gcds-radio-check-left:0.9375rem;--gcds-radio-check-top:0.9375rem;--gcds-radio-danger-border:#d3080c;--gcds-radio-default-background:#fff;--gcds-radio-default-text:#333;--gcds-radio-disabled-background:#d6d9dd;--gcds-radio-disabled-border:#545961;--gcds-radio-disabled-text:#545961;--gcds-radio-error-message-margin:0 0 0.5rem;--gcds-radio-focus-background:#fff;--gcds-radio-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-radio-focus-color:#0535d2;--gcds-radio-focus-outline-width:0.25rem;--gcds-radio-font:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-radio-hint-margin:0 0 1rem;--gcds-radio-input-border-width:0.125rem;--gcds-radio-input-height-and-width:3rem;--gcds-radio-label-font-desktop:500 1.25rem/160% "Noto Sans",sans-serif;--gcds-radio-label-font-mobile:500 1.125rem/155% "Noto Sans",sans-serif;--gcds-radio-label-padding:0 0 0 3.75rem;--gcds-radio-legend-font-desktop:700 1.25rem/160% "Noto Sans",sans-serif;--gcds-radio-legend-font-mobile:700 1.125rem/155% "Noto Sans",sans-serif;--gcds-radio-legend-hint-margin:0 0 1rem;--gcds-radio-legend-margin:0 0 0.125rem;--gcds-radio-legend-required-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-radio-legend-required-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-radio-margin:0 0 1.125rem;--gcds-radio-max-width:46.5rem;--gcds-radio-padding:0.5rem;--gcds-search-border-color:#d6d9dd;--gcds-search-border-width:0.0625rem;--gcds-search-button-width-height:2.5rem;--gcds-search-default-background:#fff;--gcds-search-default-text:#333;--gcds-search-focus-border-color:#0535d2;--gcds-search-focus-border-width:0.125rem;--gcds-search-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-search-focus-margin:0 -0.125rem 0 0;--gcds-search-font:400 1rem/150% "Noto Sans",sans-serif;--gcds-search-margin:0 0 0.125rem;--gcds-search-max-height:2.5rem;--gcds-search-outline-width:0.25rem;--gcds-search-padding:0.375rem 0 0.375rem 0.75rem;--gcds-search-placeholder:#545961;--gcds-select-arrow-position-x:calc(100% - 0.75rem);--gcds-select-border-radius:0.125rem;--gcds-select-border-width:0.125rem;--gcds-select-danger-border:#d3080c;--gcds-select-default-background:#fff;--gcds-select-default-text:#333;--gcds-select-disabled-background:#d6d9dd;--gcds-select-disabled-text:#545961;--gcds-select-focus-border:#0535d2;--gcds-select-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-select-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-select-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-select-margin:0 0 1.5rem;--gcds-select-min-width-and-height:3rem;--gcds-select-outline-width:0.25rem;--gcds-select-padding:0.5rem 3.75rem 0.5rem 0.5rem;--gcds-side-nav-heading-font:700 1.5rem/133% "Lato",sans-serif;--gcds-side-nav-heading-margin:0.5rem;--gcds-side-nav-heading-padding:0.625rem;--gcds-side-nav-max-width:20rem;--gcds-signature-color-flag:#eb2d37;--gcds-signature-color-text:#000;--gcds-signature-signature-height:1.21875rem;--gcds-signature-signature-height-desktop:2.09375rem;--gcds-signature-white-default:#fff;--gcds-signature-wordmark-height:3rem;--gcds-stepper-font-desktop:600 1.375rem/145% "Lato",sans-serif;--gcds-stepper-font-mobile:600 1.25rem/140% "Lato",sans-serif;--gcds-stepper-margin-desktop:0 0 0.5rem;--gcds-stepper-margin-mobile:0 0 0.25rem;--gcds-textarea-border-radius:0.125rem;--gcds-textarea-border-width:0.125rem;--gcds-textarea-danger-border:#d3080c;--gcds-textarea-default-background:#fff;--gcds-textarea-default-text:#333;--gcds-textarea-disabled-background:#d6d9dd;--gcds-textarea-disabled-text:#545961;--gcds-textarea-focus-border:#0535d2;--gcds-textarea-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-textarea-font-desktop:400 1.25rem/160% "Noto Sans",sans-serif;--gcds-textarea-font-mobile:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-textarea-margin:0 0 1.5rem;--gcds-textarea-min-height:3rem;--gcds-textarea-outline-width:0.25rem;--gcds-textarea-padding:0.5rem;--gcds-top-nav-border-color:#d6d9dd;--gcds-top-nav-border-width:0.0625rem;--gcds-top-nav-max-width:71.25rem;--gcds-topic-menu-border-width:0.0625rem;--gcds-topic-menu-button-background:#26374a;--gcds-topic-menu-button-border:#26374a;--gcds-topic-menu-button-expanded-background:#444;--gcds-topic-menu-button-expanded-border-color:#444;--gcds-topic-menu-button-expanded-text:#fff;--gcds-topic-menu-button-home-background:#fff;--gcds-topic-menu-button-home-border-color:#fff;--gcds-topic-menu-button-home-text:#284162;--gcds-topic-menu-button-padding:0.625rem 1.125rem;--gcds-topic-menu-button-text:#fff;--gcds-topic-menu-focus-background:#0535d2;--gcds-topic-menu-focus-text:#fff;--gcds-topic-menu-focus-border-radius:0.125rem;--gcds-topic-menu-focus-box-shadow:0 0 0 0.125rem #fff;--gcds-topic-menu-focus-outline-offset:0.125rem;--gcds-topic-menu-focus-outline:0.25rem solid #0535d2;--gcds-topic-menu-font:400 1rem/150% "Noto Sans",sans-serif;--gcds-topic-menu-max-width:71.25rem;--gcds-topic-menu-menuitem-border-block-end:#545961;--gcds-topic-menu-menuitem-border-inline-end:#fff;--gcds-topic-menu-menuitem-expanded-background:#fff;--gcds-topic-menu-menuitem-expanded-text:#333;--gcds-topic-menu-menuitem-padding:0.75rem 1.5rem;--gcds-topic-menu-menuitem-text:#fff;--gcds-topic-menu-menuitem-text-underline-offset:0.25rem;--gcds-topic-menu-menuitem-width:22.5rem;--gcds-topic-menu-mobile-item-expanded-margin-inline-start:3.75rem;--gcds-topic-menu-mobile-item-expanded-padding-inline-start:3.75rem;--gcds-topic-menu-mobile-menuitem-background:#d6d9dd;--gcds-topic-menu-mobile-mostrequested-background:#d6d9dd;--gcds-topic-menu-mobile-mostrequested-border:#a8adb4;--gcds-topic-menu-mobile-mostrequested-expanded-margin-inline-start:6rem;--gcds-topic-menu-mobile-mostrequested-hover-text:#000;--gcds-topic-menu-mobile-themelist-border:#f1f2f3;--gcds-topic-menu-mobile-themelist-margin-block-start:3rem;--gcds-topic-menu-mobile-topiclist-item-first-menuitem-border:#d6d9dd;--gcds-topic-menu-mobile-topiclist-item-first-menuitem-text:#000;--gcds-topic-menu-mobile-topiclist-item-last-menuitem-hover-text:#000;--gcds-topic-menu-mobile-topiclist-item-last-menuitem-text:#284162;--gcds-topic-menu-mobile-topiclist-menuitem-border-block-end:#d6d9dd;--gcds-topic-menu-mobile-topiclist-menuitem-hover-text:#0535d2;--gcds-topic-menu-mobile-topiclist-menuitem-padding:0.875rem 1.5rem 0.875rem 0;--gcds-topic-menu-mostrequested-item-last-margin-block-start:0.875rem;--gcds-topic-menu-mostrequested-item-width:100%;--gcds-topic-menu-themelist-background:#444;--gcds-topic-menu-themelist-item-border:#444;--gcds-topic-menu-themelist-text:#fff;--gcds-topic-menu-themelist-width:100%;--gcds-topic-menu-topiclist-background:#fff;--gcds-topic-menu-topiclist-border:#d6d9dd;--gcds-topic-menu-topiclist-box-shadow:0.5rem 0.5rem 0.5rem 0.375rem rgba(0,0,0,.1);--gcds-topic-menu-topiclist-item-first-font:700 1.8125rem/137% "Noto Sans",sans-serif;--gcds-topic-menu-topiclist-item-first-margin-block-end:2.25rem;--gcds-topic-menu-topiclist-item-first-width:100%;--gcds-topic-menu-topiclist-item-last-left:25rem;--gcds-topic-menu-topiclist-item-last-top:6rem;--gcds-topic-menu-topiclist-left:22.5rem;--gcds-topic-menu-topiclist-margin-block-end:1.5rem;--gcds-topic-menu-topiclist-menuitem-hover-text:#0535d2;--gcds-topic-menu-topiclist-menuitem-hover-text-decoration-thickness:0.125rem;--gcds-topic-menu-topiclist-menuitem-padding:0.375rem 0;--gcds-topic-menu-topiclist-menuitem-popup-font:700 1.25rem/160% "Noto Sans",sans-serif;--gcds-topic-menu-topiclist-menuitem-popup-text:#000;--gcds-topic-menu-topiclist-menuitem-text:#284162;--gcds-topic-menu-topiclist-min-height:45.9375rem;--gcds-topic-menu-topiclist-padding:0 2.25rem 1.5rem 2.25rem;--gcds-topic-menu-topiclist-text:#000;--gcds-topic-menu-topiclist-width:calc(100% - 22.5rem);--gcds-verify-banner-background:#f1f2f3;--gcds-verify-banner-container-xs:20rem;--gcds-verify-banner-container-sm:30rem;--gcds-verify-banner-container-md:48rem;--gcds-verify-banner-container-lg:62rem;--gcds-verify-banner-container-xl:71.25rem;--gcds-verify-banner-container-full:100%;--gcds-verify-banner-container-padding:1.125rem;--gcds-verify-banner-content-border-color:#7d828b;--gcds-verify-banner-content-border-width:0.0625rem;--gcds-verify-banner-content-heading-margin:0 0 0.125rem;--gcds-verify-banner-content-padding-block-start:1.5rem;--gcds-verify-banner-content-padding-block-end:0.75rem;--gcds-verify-banner-font:400 1.125rem/155% "Noto Sans",sans-serif;--gcds-verify-banner-summary-padding:0.75rem;--gcds-verify-banner-summary-content-margin:0 1.125rem 0 0;--gcds-verify-banner-text:#333;--gcds-verify-banner-toggle-text:#284162;--gcds-verify-banner-toggle-font-weight:700}@font-face{font-display:block;font-family:gcds-icons;font-style:normal;font-weight:400;src:url(https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-fonts@0.2.2/icons/gcds-icons.ttf) format("truetype"),url(https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-fonts@0.2.2/icons/gcds-icons.woff) format("woff")}@keyframes fade{0%{opacity:0}to{opacity:1}}body{animation:fade .05s ease-in-out normal forwards}
+</style>
+<script type="module" id="gcds-js">
+var ke="gcds",Q={hydratedSelectorName:"hydrated",lazyLoad:!1,updatable:!0},xe=Object.defineProperty,we=(t,e)=>{for(var n in e)xe(t,n,{get:e[n],enumerable:!0})},Pt=(t=>(t.Undefined="undefined",t.Null="null",t.String="string",t.Number="number",t.SpecialNumber="number",t.Boolean="boolean",t.BigInt="bigint",t))(Pt||{}),Ht=(t=>(t.Array="array",t.Date="date",t.Map="map",t.Object="object",t.RegularExpression="regexp",t.Set="set",t.Channel="channel",t.Symbol="symbol",t))(Ht||{}),st="type",it="value",at="serialized:",j=t=>{if(t.__stencil__getHostRef)return t.__stencil__getHostRef()},_e=(t,e)=>{let n={t:0,$hostElement$:t,i:e,l:new Map};n.o=new Promise((a=>n.u=a)),t["s-p"]=[],t["s-rc"]=[];let s=n;return t.__stencil__getHostRef=()=>s,s},wt=(t,e)=>e in t,V=(t,e)=>(0,console.error)(t,e),J=new Map,Se="r",Ee="o",ze="s",Ne="t",$e="c",U="s-id",ot="sty-id",_t="c-id",je="slot-fb{display:contents}slot-fb[hidden]{display:none}",St="http://www.w3.org/1999/xlink",Ae=["formAssociatedCallback","formResetCallback","formDisabledCallback","formStateRestoreCallback"],y=typeof window<"u"?window:{},E=y.HTMLElement||class{},p={t:0,v:"",jmp:t=>t(),raf:t=>requestAnimationFrame(t),ael:(t,e,n,s)=>t.addEventListener(e,n,s),rel:(t,e,n,s)=>t.removeEventListener(e,n,s),ce:(t,e)=>new CustomEvent(t,e)},Oe=(()=>{var t;let e=!1;try{(t=y.document)==null||t.addEventListener("e",null,Object.defineProperty({},"passive",{get(){e=!0}}))}catch{}return e})(),Te=t=>Promise.resolve(t),mt=(()=>{try{return new CSSStyleSheet,typeof new CSSStyleSheet().replaceSync=="function"}catch{}return!1})(),rt=!1,Et=[],Dt=[],Ce=(t,e)=>n=>{t.push(n),rt||(rt=!0,e&&p.t&4?X(lt):p.raf(lt))},zt=t=>{for(let e=0;e<t.length;e++)try{t[e](performance.now())}catch(n){V(n)}t.length=0},lt=()=>{zt(Et),zt(Dt),(rt=Et.length>0)&&p.raf(lt)},X=t=>Te().then(t),Re=Ce(Dt,!0);var ut=t=>(t=typeof t,t==="object"||t==="function");function Le(t){var e,n,s;return(s=(n=(e=t.head)==null?void 0:e.querySelector('meta[name="csp-nonce"]'))==null?void 0:n.getAttribute("content"))!=null?s:void 0}var Me=t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),Be=class T{static fromLocalValue(e){let n=e[st],s=it in e?e[it]:void 0;switch(n){case"string":return s;case"boolean":return s;case"bigint":return BigInt(s);case"undefined":return;case"null":return null;case"number":return s==="NaN"?NaN:s==="-0"?-0:s==="Infinity"?1/0:s==="-Infinity"?-1/0:s;case"array":return s.map((o=>T.fromLocalValue(o)));case"date":return new Date(s);case"map":let a=new Map;for(let[o,r]of s){let h=typeof o=="object"&&o!==null?T.fromLocalValue(o):o,g=T.fromLocalValue(r);a.set(h,g)}return a;case"object":let i={};for(let[o,r]of s)i[o]=T.fromLocalValue(r);return i;case"regexp":let{pattern:c,flags:l}=s;return new RegExp(c,l);case"set":let d=new Set;for(let o of s)d.add(T.fromLocalValue(o));return d;case"symbol":return Symbol(s);default:throw new Error(`Unsupported type: ${n}`)}}static fromLocalValueArray(e){return e.map((n=>T.fromLocalValue(n)))}static isLocalValueObject(e){if(typeof e!="object"||e===null||!e.hasOwnProperty(st))return!1;let n=e[st];return Object.values({...Pt,...Ht}).includes(n)?n!=="null"&&n!=="undefined"?e.hasOwnProperty(it):!0:!1}},Pe={};we(Pe,{err:()=>It,map:()=>He,ok:()=>ct,unwrap:()=>De,unwrapErr:()=>Ie});var ct=t=>({isOk:!0,isErr:!1,value:t}),It=t=>({isOk:!1,isErr:!0,value:t});function He(t,e){if(t.isOk){let n=e(t.value);return n instanceof Promise?n.then((s=>ct(s))):ct(n)}if(t.isErr){let n=t.value;return It(n)}throw"should never get here"}var De=t=>{if(t.isOk)return t.value;throw t.value},Ie=t=>{if(t.isErr)return t.value;throw t.value};function Ue(t){return typeof t!="string"||!t.startsWith(at)?t:Be.fromLocalValue(JSON.parse(atob(t.slice(at.length))))}function Fe(t){let e=this.attachShadow({mode:"open",delegatesFocus:!!(t.t&16)});if(mt){let n=new CSSStyleSheet;n.replaceSync(""),e.adoptedStyleSheets.push(n)}}var Ve=t=>{let e=[];for(let n=0;n<t.length;n++){let s=t[n]["s-nr"]||void 0;s&&s.isConnected&&e.push(s)}return e};function Ut(t,e,n){let s=0,a=[],i;for(;s<t.length;s++){if(i=t[s],i["s-sr"]&&(!e||i["s-hn"]===e)&&(n===void 0||ft(i)===n)&&(a.push(i),typeof n<"u"))return a;a=[...a,...Ut(i.childNodes,e,n)]}return a}var We=(t,e,n,s)=>{if(t["s-ol"]&&t["s-ol"].isConnected)return;let a=document.createTextNode("");if(a["s-nr"]=t,!e["s-cr"]||!e["s-cr"].parentNode)return;let i=e["s-cr"].parentNode,c=dt(i,"appendChild");if(typeof s<"u"){a["s-oo"]=s;let l=dt(i,"childNodes"),d=[a];l.forEach((o=>{o["s-nr"]&&d.push(o)})),d.sort(((o,r)=>!o["s-oo"]||o["s-oo"]<(r["s-oo"]||0)?-1:!r["s-oo"]||r["s-oo"]<o["s-oo"]?1:0)),d.forEach((o=>c.call(i,o)))}else c.call(i,a);t["s-ol"]=a,t["s-sh"]=e["s-hn"]},ft=t=>typeof t["s-sn"]=="string"?t["s-sn"]:t.nodeType===1&&t.getAttribute("slot")||void 0;function Ge(t){if(t.assignedElements||t.assignedNodes||!t["s-sr"])return;let e=n=>function(s){let a=[],i=this["s-sn"];s?.flatten&&console.error(`
+          Flattening is not supported for Stencil non-shadow slots.
+          You can use \`.childNodes\` to nested slot fallback content.
+          If you have a particular use case, please open an issue on the Stencil repo.
+        `);let c=this["s-cr"].parentElement;return(c.__childNodes?c.childNodes:Ve(c.childNodes)).forEach((d=>{i===ft(d)&&a.push(d)})),n?a.filter((d=>d.nodeType===1)):a}.bind(t);t.assignedElements=e(!0),t.assignedNodes=e(!1)}function qe(t){t.dispatchEvent(new CustomEvent("slotchange",{bubbles:!1,cancelable:!1,composed:!1}))}function Ye(t,e){var n;if(e=e||((n=t["s-ol"])==null?void 0:n.parentElement),!e)return{slotNode:null,slotName:""};let s=t["s-sn"]=ft(t)||"",a=dt(e,"childNodes");return{slotNode:Ut(a,e.tagName,s)[0],slotName:s}}var Je=t=>{!t||t.__nextSibling!==void 0||!globalThis.Node||(Ke(t),Xe(t),Ft(t),t.nodeType===Node.ELEMENT_NODE&&(Qe(t),Ze(t)))},Ke=t=>{!t||t.__nextSibling||(W("nextSibling",t),Object.defineProperty(t,"nextSibling",{get:function(){var e;let n=(e=this["s-ol"])==null?void 0:e.parentNode.childNodes,s=n?.indexOf(this);return n&&s>-1?n[s+1]:this.__nextSibling}}))},Qe=t=>{!t||t.__nextElementSibling||(W("nextElementSibling",t),Object.defineProperty(t,"nextElementSibling",{get:function(){var e;let n=(e=this["s-ol"])==null?void 0:e.parentNode.children,s=n?.indexOf(this);return n&&s>-1?n[s+1]:this.__nextElementSibling}}))},Xe=t=>{!t||t.__previousSibling||(W("previousSibling",t),Object.defineProperty(t,"previousSibling",{get:function(){var e;let n=(e=this["s-ol"])==null?void 0:e.parentNode.childNodes,s=n?.indexOf(this);return n&&s>-1?n[s-1]:this.__previousSibling}}))},Ze=t=>{!t||t.__previousElementSibling||(W("previousElementSibling",t),Object.defineProperty(t,"previousElementSibling",{get:function(){var e;let n=(e=this["s-ol"])==null?void 0:e.parentNode.children,s=n?.indexOf(this);return n&&s>-1?n[s-1]:this.__previousElementSibling}}))},Ft=t=>{!t||t.__parentNode||(W("parentNode",t),Object.defineProperty(t,"parentNode",{get:function(){var e;return((e=this["s-ol"])==null?void 0:e.parentNode)||this.__parentNode},set:function(e){this.__parentNode=e}}))},tn=["children","nextElementSibling","previousElementSibling"],en=["childNodes","firstChild","lastChild","nextSibling","previousSibling","textContent","parentNode"];function W(t,e){let n;tn.includes(t)?n=Object.getOwnPropertyDescriptor(Element.prototype,t):en.includes(t)&&(n=Object.getOwnPropertyDescriptor(Node.prototype,t)),n||(n=Object.getOwnPropertyDescriptor(e,t)),n&&Object.defineProperty(e,"__"+t,n)}function dt(t,e){if("__"+e in t){let n=t["__"+e];return typeof n!="function"?n:n.bind(t)}else return typeof t[e]!="function"?t[e]:t[e].bind(t)}var A=(t,e="")=>()=>{},u=(t,e,...n)=>{let s=null,a=null,i=!1,c=!1,l=[],d=r=>{for(let h=0;h<r.length;h++)s=r[h],Array.isArray(s)?d(s):s!=null&&typeof s!="boolean"&&((i=typeof t!="function"&&!ut(s))&&(s=String(s)),i&&c?l[l.length-1].p+=s:l.push(i?M(null,s):s),c=i)};if(d(n),e){e.key&&(a=e.key);{let r=e.className||e.class;r&&(e.class=typeof r!="object"?r:Object.keys(r).filter((h=>r[h])).join(" "))}}if(typeof t=="function")return t(e===null?{}:e,l,sn);let o=M(t,null);return o.h=e,l.length>0&&(o.$=l),o.m=a,o},M=(t,e)=>{let n={t:0,S:t,p:e,j:null,$:null};return n.h=null,n.m=null,n},S={},nn=t=>t&&t.S===S,sn={forEach:(t,e)=>t.map(Nt).forEach(e),map:(t,e)=>t.map(Nt).map(e).map(an)},Nt=t=>({vattrs:t.h,vchildren:t.$,vkey:t.m,vname:t.O,vtag:t.S,vtext:t.p}),an=t=>{if(typeof t.vtag=="function"){let n={...t.vattrs};return t.vkey&&(n.key=t.vkey),t.vname&&(n.name=t.vname),u(t.vtag,n,...t.vchildren||[])}let e=M(t.vtag,t.vtext);return e.h=t.vattrs,e.$=t.vchildren,e.m=t.vkey,e.O=t.vname,e},on=(t,e,n,s)=>{var a;let i=A("hydrateClient",e),c=t.shadowRoot,l=[],d=[],o=[],r=c?[]:null,h=M(e,null);h.j=t,Object.entries(((a=s.i)==null?void 0:a.N)||{}).forEach((([b,[_,k]])=>{var q,kt;if(!(_&31))return;let be=k||b,xt=t.getAttribute(be);if(xt!==null){let ye=vt(xt,_,!!(((q=s.i)==null?void 0:q.t)&64));(kt=s?.l)==null||kt.set(b,ye)}})),y.document&&(!p.k||!p.k.size)&&gt(y.document.body,p.k=new Map),t[U]=n,t.removeAttribute(U),s.C=ht(h,l,d,r,t,t,n,o);let m=0,v=l.length,f;for(m;m<v;m++){f=l[m];let b=f.I+"."+f.M,_=p.k.get(b),k=f.j;c||(k["s-hn"]=e.toUpperCase(),f.S==="slot"&&(k["s-cr"]=t["s-cr"])),f.S==="slot"&&(f.O=f.j["s-sn"]||f.j.name||null,f.$?(f.t|=2,f.j.childNodes.length||f.$.forEach((q=>{f.j.appendChild(q.j)}))):f.t|=1),_&&_.isConnected&&(c&&_["s-en"]===""&&_.parentNode.insertBefore(k,_.nextSibling),_.parentNode.removeChild(_),c||(k["s-oo"]=parseInt(f.M))),p.k.delete(b)}let w=[],H=o.length,O=0,$,D,yt,x;for(O;O<H;O++)if($=o[O],!(!$||!$.length))for(yt=$.length,D=0,D;D<yt;D++){if(x=$[D],w[x.hostId]||(w[x.hostId]=p.k.get(x.hostId)),!w[x.hostId])continue;let b=w[x.hostId];(!b.shadowRoot||!c)&&(x.slot["s-cr"]=b["s-cr"],!x.slot["s-cr"]&&b.shadowRoot?x.slot["s-cr"]=b:x.slot["s-cr"]=(b.__childNodes||b.childNodes)[0],We(x.node,x.slot,!1,x.node["s-oo"]),Je(x.node)),b.shadowRoot&&x.node.parentElement!==b&&b.appendChild(x.node)}if(c&&!c.childNodes.length){let b=0,_=r.length;if(_){for(b;b<_;b++)c.appendChild(r[b]);Array.from(t.childNodes).forEach((k=>{typeof k["s-en"]!="string"&&typeof k["s-sn"]!="string"&&(k.nodeType===1&&k.slot&&k.hidden?k.removeAttribute("hidden"):(k.nodeType===8||k.nodeType===3&&!k.wholeText.trim())&&k.parentNode.removeChild(k))}))}}p.k.delete(t["s-id"]),s.$hostElement$=t,i()},ht=(t,e,n,s,a,i,c,l=[])=>{let d,o,r,h;if(i.nodeType===1){if(d=i.getAttribute(_t),d&&(o=d.split("."),o[0]===c||o[0]==="0")){r=$t({t:0,I:o[0],M:o[1],_:o[2],A:o[3],S:i.tagName.toLowerCase(),j:i,h:{class:i.className||""}}),e.push(r),i.removeAttribute(_t),t.$||(t.$=[]);let m=r.j.getAttribute("s-sn");typeof m=="string"&&(r.S==="slot-fb"&&jt(m,o[2],r,i,t,e,n,s,l),r.j["s-sn"]=m,r.j.removeAttribute("s-sn")),r.A!==void 0&&(t.$[r.A]=r),t=r,s&&r._==="0"&&(s[r.A]=r.j)}if(i.shadowRoot)for(h=i.shadowRoot.childNodes.length-1;h>=0;h--)ht(t,e,n,s,a,i.shadowRoot.childNodes[h],c,l);let g=i.__childNodes||i.childNodes;for(h=g.length-1;h>=0;h--)ht(t,e,n,s,a,g[h],c,l)}else if(i.nodeType===8){if(o=i.nodeValue.split("."),o[1]===c||o[1]==="0"){if(d=o[0],r=$t({I:o[1],M:o[2],_:o[3],A:o[4]||"0",j:i,h:null,$:null,m:null,O:null,S:null,p:null}),d===Ne)r.j=Ot(i,3),r.j&&r.j.nodeType===3&&(r.p=r.j.textContent,e.push(r),i.remove(),c===r.I&&(t.$||(t.$=[]),t.$[r.A]=r),s&&r._==="0"&&(s[r.A]=r.j));else if(d===$e)r.j=Ot(i,8),r.j&&r.j.nodeType===8&&(e.push(r),i.remove());else if(r.I===c)if(d===ze){let g=i["s-sn"]=o[5]||"";jt(g,o[2],r,i,t,e,n,s,l)}else d===Se&&s&&i.remove()}}else if(t&&t.S==="style"){let g=M(null,i.textContent);g.j=i,g.A="0",t.$=[g]}else i.nodeType===3&&!i.wholeText.trim()&&i.remove();return t},gt=(t,e)=>{if(t.nodeType===1){let n=t[U]||t.getAttribute(U);n&&e.set(n,t);let s=0;if(t.shadowRoot)for(;s<t.shadowRoot.childNodes.length;s++)gt(t.shadowRoot.childNodes[s],e);let a=t.__childNodes||t.childNodes;for(s=0;s<a.length;s++)gt(a[s],e)}else if(t.nodeType===8){let n=t.nodeValue.split(".");n[0]===Ee&&(e.set(n[1]+"."+n[2],t),t.nodeValue="",t["s-en"]=n[3])}},$t=t=>({...{t:0,I:null,M:null,_:null,A:"0",j:null,h:null,$:null,m:null,O:null,S:null,p:null},...t});function jt(t,e,n,s,a,i,c,l,d){s["s-sr"]=!0,n.O=t||null,n.S="slot";let o=a?.j?a.j["s-id"]||a.j.getAttribute("s-id"):"";if(l&&y.document){let r=n.j=y.document.createElement(n.S);n.O&&n.j.setAttribute("name",t),o&&o!==n.I?a.j.insertBefore(r,a.j.children[0]):s.parentNode.insertBefore(r,s),At(d,e,t,s,n.I),s.remove(),n._==="0"&&(l[n.A]=n.j)}else{let r=n.j,h=o&&o!==n.I&&a.j.shadowRoot;At(d,e,t,s,h?o:n.I),Ge(s),h&&a.j.insertBefore(r,a.j.children[0])}i.push(n),c.push(n),a.$||(a.$=[]),a.$[n.A]=n}var At=(t,e,n,s,a)=>{let i=s.nextSibling;for(t[e]=t[e]||[];i&&((i.getAttribute&&i.getAttribute("slot")||i["s-sn"])===n||n===""&&!i["s-sn"]&&(i.nodeType===8&&i.nodeValue.indexOf(".")!==1||i.nodeType===3));)i["s-sn"]=n,t[e].push({slot:s,node:i,hostId:a}),i=i.nextSibling},Ot=(t,e)=>{let n=t;do n=n.nextSibling;while(n&&(n.nodeType!==e||!n.nodeValue));return n},pt=t=>{let e=Me(t);return new RegExp(`(^|[^@]|@(?!supports\\s+selector\\s*\\([^{]*?${e}))(${e}\\b)`,"g")};pt("::slotted");pt(":host");pt(":host-context");var vt=(t,e,n)=>{if(typeof t=="string"&&(t.startsWith("{")&&t.endsWith("}")||t.startsWith("[")&&t.endsWith("]")))try{return t=JSON.parse(t),t}catch{}return typeof t=="string"&&t.startsWith(at)?(t=Ue(t),t):t!=null&&!ut(t)?e&4?n&&typeof t=="string"?t===""||!!t:t==="false"?!1:t===""||!!t:e&2?typeof t=="string"?parseFloat(t):typeof t=="number"?t:NaN:e&1?String(t):t:t},rn=t=>t,z=(t,e,n)=>{let s=rn(t);return{emit:a=>Vt(s,e,{bubbles:!0,composed:!0,cancelable:!0,detail:a})}},Vt=(t,e,n)=>{let s=p.ce(e,n);return t.dispatchEvent(s),s},R=new WeakMap,Wt=(t,e,n)=>{let s=J.get(t);mt&&n?(s=s||new CSSStyleSheet,typeof s=="string"?s=e:s.replaceSync(e)):s=e,J.set(t,s)},Gt=(t,e,n)=>{var s;let a=qt(e),i=J.get(a);if(!y.document)return a;if(t=t.nodeType===11?t:y.document,i)if(typeof i=="string"){t=t.head||t;let c=R.get(t),l;if(c||R.set(t,c=new Set),!c.has(a)){if(t.host&&(l=t.querySelector(`[${ot}="${a}"]`)))l.innerHTML=i;else{l=y.document.createElement("style"),l.innerHTML=i;let d=(s=p.R)!=null?s:Le(y.document);if(d!=null&&l.setAttribute("nonce",d),!(e.t&1))if(t.nodeName==="HEAD"){let o=t.querySelectorAll("link[rel=preconnect]"),r=o.length>0?o[o.length-1].nextSibling:t.querySelector("style");t.insertBefore(l,r?.parentNode===t?r:null)}else if("host"in t)if(mt){let o=new CSSStyleSheet;o.replaceSync(i),t.adoptedStyleSheets=[o,...t.adoptedStyleSheets]}else{let o=t.querySelector("style");o?o.innerHTML=i+o.innerHTML:t.prepend(l)}else t.append(l);e.t&1&&t.insertBefore(l,null)}e.t&4&&(l.innerHTML+=je),c&&c.add(a)}}else t.adoptedStyleSheets.includes(i)||(t.adoptedStyleSheets=[...t.adoptedStyleSheets,i]);return a},ln=t=>{let e=t.i,n=t.$hostElement$,s=e.t,a=A("attachStyles",e.U),i=Gt(n.shadowRoot?n.shadowRoot:n.getRootNode(),e);s&10&&(n["s-sc"]=i,n.classList.add(i+"-h")),a()},qt=(t,e)=>"sc-"+t.U,cn=t=>t.replace(/\/\*!@([^\/]+)\*\/[^\{]+\{/g,"$1{"),dn=()=>{if(!y.document)return;let t=y.document.querySelectorAll(`[${ot}]`),e=0;for(;e<t.length;e++)Wt(t[e].getAttribute(ot),cn(t[e].innerHTML),!0)},Tt=(t,e,n,s,a,i,c)=>{if(n===s)return;let l=wt(t,e),d=e.toLowerCase();if(e==="class"){let o=t.classList,r=Ct(n),h=Ct(s);t["s-si"]&&c?(h.push(t["s-si"]),r.forEach((g=>{g.startsWith(t["s-si"])&&h.push(g)})),h=[...new Set(h)],o.add(...h)):(o.remove(...r.filter((g=>g&&!h.includes(g)))),o.add(...h.filter((g=>g&&!r.includes(g)))))}else if(e==="style"){for(let o in n)(!s||s[o]==null)&&(o.includes("-")?t.style.removeProperty(o):t.style[o]="");for(let o in s)(!n||s[o]!==n[o])&&(o.includes("-")?t.style.setProperty(o,s[o]):t.style[o]=s[o])}else if(e!=="key")if(e==="ref")s&&s(t);else if(!t.__lookupSetter__(e)&&e[0]==="o"&&e[1]==="n"){if(e[2]==="-"?e=e.slice(3):wt(y,d)?e=d.slice(2):e=d[2]+e.slice(3),n||s){let o=e.endsWith(Yt);e=e.replace(gn,""),n&&p.rel(t,e,n,o),s&&p.ael(t,e,s,o)}}else{let o=ut(s);if(l||o&&s!==null)try{if(t.tagName.includes("-"))t[e]!==s&&(t[e]=s);else{let h=s??"";e==="list"?l=!1:(n==null||t[e]!=h)&&(typeof t.__lookupSetter__(e)=="function"?t[e]=h:t.setAttribute(e,h))}}catch{}let r=!1;d!==(d=d.replace(/^xlink\:?/,""))&&(e=d,r=!0),s==null||s===!1?(s!==!1||t.getAttribute(e)==="")&&(r?t.removeAttributeNS(St,e):t.removeAttribute(e)):(!l||i&4||a)&&!o&&t.nodeType===1&&(s=s===!0?"":s,r?t.setAttributeNS(St,e,s):t.setAttribute(e,s))}},hn=/\s/,Ct=t=>(typeof t=="object"&&t&&"baseVal"in t&&(t=t.baseVal),!t||typeof t!="string"?[]:t.split(hn)),Yt="Capture",gn=new RegExp(Yt+"$"),Jt=(t,e,n,s)=>{let a=e.j.nodeType===11&&e.j.host?e.j.host:e.j,i=t&&t.h||{},c=e.h||{};for(let l of Rt(Object.keys(i)))l in c||Tt(a,l,i[l],void 0,n,e.t,s);for(let l of Rt(Object.keys(c)))Tt(a,l,i[l],c[l],n,e.t,s)};function Rt(t){return t.includes("ref")?[...t.filter((e=>e!=="ref")),"ref"]:t}var F,Kt=!1,Qt=!1,K=(t,e,n)=>{let s=e.$[n],a=0,i,c;if(s.p!==null)i=s.j=y.document.createTextNode(s.p);else{if(!y.document)throw new Error("You are trying to render a Stencil component in an environment that doesn't support the DOM. Make sure to populate the [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/window) object before rendering a component.");if(i=s.j=y.document.createElement(s.S),Jt(null,s,Qt),s.$)for(a=0;a<s.$.length;++a)c=K(t,s,a),c&&i.appendChild(c)}return i["s-hn"]=F,i},mn=t=>{p.t|=1;let e=t.closest(F.toLowerCase());if(e!=null){let n=Array.from(e.__childNodes||e.childNodes).find((a=>a["s-cr"])),s=Array.from(t.__childNodes||t.childNodes);for(let a of n?s.reverse():s)a["s-sh"]!=null&&(I(e,a,n??null),a["s-sh"]=void 0)}p.t&=-2},Xt=(t,e,n,s,a,i)=>{let c=t,l;for(c.shadowRoot&&c.tagName===F&&(c=c.shadowRoot);a<=i;++a)s[a]&&(l=K(null,n,a),l&&(s[a].j=l,I(c,l,e)))},Zt=(t,e,n)=>{for(let s=e;s<=n;++s){let a=t[s];if(a){let i=a.j;te(a),i&&i.remove()}}},un=(t,e,n,s,a=!1)=>{let i=0,c=0,l=0,d=0,o=e.length-1,r=e[0],h=e[o],g=s.length-1,m=s[0],v=s[g],f,w;for(;i<=o&&c<=g;)if(r==null)r=e[++i];else if(h==null)h=e[--o];else if(m==null)m=s[++c];else if(v==null)v=s[--g];else if(Y(r,m,a))C(r,m,a),r=e[++i],m=s[++c];else if(Y(h,v,a))C(h,v,a),h=e[--o],v=s[--g];else if(Y(r,v,a))C(r,v,a),I(t,r.j,h.j.nextSibling),r=e[++i],v=s[--g];else if(Y(h,m,a))C(h,m,a),I(t,h.j,r.j),h=e[--o],m=s[++c];else{for(l=-1,d=i;d<=o;++d)if(e[d]&&e[d].m!==null&&e[d].m===m.m){l=d;break}l>=0?(w=e[l],w.S!==m.S?f=K(e&&e[c],n,l):(C(w,m,a),e[l]=void 0,f=w.j),m=s[++c]):(f=K(e&&e[c],n,c),m=s[++c]),f&&I(r.j.parentNode,f,r.j)}i>o?Xt(t,s[g+1]==null?null:s[g+1].j,n,s,c,g):c>g&&Zt(e,i,o)},Y=(t,e,n=!1)=>t.S===e.S?n?(n&&!t.m&&e.m&&(t.m=e.m),!0):t.m===e.m:!1,C=(t,e,n=!1)=>{let s=e.j=t.j,a=t.$,i=e.$,c=e.S,l=e.p;l===null?(c==="slot"&&!Kt&&t.O!==e.O&&(e.j["s-sn"]=e.O||"",mn(e.j.parentElement)),Jt(t,e,Qt,n),a!==null&&i!==null?un(s,a,e,i,n):i!==null?(t.p!==null&&(s.textContent=""),Xt(s,null,e,i,0,i.length-1)):!n&&Q.updatable&&a!==null&&Zt(a,0,a.length-1)):t.p!==l&&(s.data=l)},te=t=>{t.h&&t.h.ref&&t.h.ref(null),t.$&&t.$.map(te)},I=(t,e,n)=>{if(typeof e["s-sn"]=="string"){t.getRootNode().nodeType!==11&&Ft(e),t.insertBefore(e,n);let{slotNode:s}=Ye(e);return s&&qe(s),e}return t.__insertBefore?t.__insertBefore(e,n):t?.insertBefore(e,n)},fn=(t,e,n=!1)=>{var s;let a=t.$hostElement$,i=t.i,c=t.C||M(null,null),d=nn(e)?e:u(null,null,e);if(F=a.tagName,i.L&&(d.h=d.h||{},i.L.map((([o,r])=>d.h[r]=a[o]))),n&&d.h)for(let o of Object.keys(d.h))a.hasAttribute(o)&&!["key","ref","style","class"].includes(o)&&(d.h[o]=a[o]);if(d.S=null,d.t|=4,t.C=d,d.j=c.j=a.shadowRoot||a,Kt=!!(i.t&1)&&!(i.t&128),C(c,d,n),i.t&2){let o=d.j.__childNodes||d.j.childNodes;for(let r of o)r["s-hn"]!==F&&!r["s-sh"]&&(n&&r["s-ih"]==null&&(r["s-ih"]=(s=r.hidden)!=null?s:!1),r.hidden=!0)}},ee=(t,e)=>{if(e&&!t.D&&e["s-p"]){let n=e["s-p"].push(new Promise((s=>t.D=()=>{e["s-p"].splice(n-1,1),s()})))}},bt=(t,e)=>{if(t.t|=16,t.t&4){t.t|=512;return}return ee(t,t.P),Re(()=>pn(t,e))},pn=(t,e)=>{let n=t.$hostElement$,s=A("scheduleUpdate",t.i.U),a=n;if(!a)throw new Error(`Can't render component <${n.tagName.toLowerCase()} /> with invalid Stencil runtime! Make sure this imported component is compiled with a \`externalRuntime: true\` flag. For more information, please refer to https://stenciljs.com/docs/custom-elements#externalruntime`);let i;return e?i=L(a,"componentWillLoad",void 0,n):i=L(a,"componentWillUpdate",void 0,n),i=Lt(i,(()=>L(a,"componentWillRender",void 0,n))),s(),Lt(i,(()=>bn(t,a,e)))},Lt=(t,e)=>vn(t)?t.then(e).catch((n=>{console.error(n),e()})):e(),vn=t=>t instanceof Promise||t&&t.then&&typeof t.then=="function",bn=async(t,e,n)=>{var s;let a=t.$hostElement$,i=A("update",t.i.U),c=a["s-rc"];n&&ln(t);let l=A("render",t.i.U);yn(t,e,a,n),c&&(c.map((d=>d())),a["s-rc"]=void 0),l(),i();{let d=(s=a["s-p"])!=null?s:[],o=()=>kn(t);d.length===0?o():(Promise.all(d).then(o),t.t|=4,d.length=0)}},yn=(t,e,n,s)=>{try{e=e.render(),t.t&=-17,t.t|=2,fn(t,e,s)}catch(a){V(a,t.$hostElement$)}return null},kn=t=>{let e=t.i.U,n=t.$hostElement$,s=A("postUpdate",e),a=n,i=t.P;L(a,"componentDidRender",void 0,n),t.t&64?(L(a,"componentDidUpdate",void 0,n),s()):(t.t|=64,wn(n),L(a,"componentDidLoad",void 0,n),s(),t.u(n),i||xn()),t.D&&(t.D(),t.D=void 0),t.t&512&&X((()=>bt(t,!1))),t.t&=-517},xn=t=>{X((()=>Vt(y,"appload",{detail:{namespace:ke}})))},L=(t,e,n,s)=>{if(t&&t[e])try{return t[e](n)}catch(a){V(a,s)}},wn=t=>{var e;return t.classList.add((e=Q.hydratedSelectorName)!=null?e:"hydrated")},_n=(t,e)=>j(t).l.get(e),Mt=(t,e,n,s)=>{let a=j(t),i=t,c=a.l.get(e),l=a.t,d=i;n=vt(n,s.N[e][0],!!(s.t&64));let o=Number.isNaN(c)&&Number.isNaN(n);if(n!==c&&!o){a.l.set(e,n);{if(s.F&&l&128){let h=s.F[e];h&&h.map((g=>{try{d[g](n,c,e)}catch(m){V(m,i)}}))}if((l&18)===2){if(d.componentShouldUpdate&&d.componentShouldUpdate(n,c,e)===!1)return;bt(a,!1)}}}},Sn=(t,e,n)=>{var s,a;let i=t.prototype;if(e.t&64&&n&1&&Ae.forEach((c=>{let l=i[c];Object.defineProperty(i,c,{value(...d){let o=j(this),r=this;if(!r)o.o.then((h=>{let g=h[c];typeof g=="function"&&g.call(h,...d)}));else{let h=l;typeof h=="function"&&h.call(r,...d)}}})})),e.N||e.F||t.watchers){t.watchers&&!e.F&&(e.F=t.watchers);let c=Object.entries((s=e.N)!=null?s:{});c.map((([l,[d]])=>{if(d&31||d&32){let{get:o,set:r}=Object.getOwnPropertyDescriptor(i,l)||{};o&&(e.N[l][0]|=2048),r&&(e.N[l][0]|=4096),Object.defineProperty(i,l,{get(){return o?o.apply(this):_n(this,l)},configurable:!0,enumerable:!0}),Object.defineProperty(i,l,{set(h){let g=j(this);if(r){let m=d&32?this[l]:g.$hostElement$[l];typeof m>"u"&&g.l.get(l)?h=g.l.get(l):!g.l.get(l)&&m&&g.l.set(l,m),r.apply(this,[vt(h,d,!!(e.t&64))]),h=d&32?this[l]:g.$hostElement$[l],Mt(this,l,h,e);return}{Mt(this,l,h,e);return}}})}}));{let l=new Map;i.attributeChangedCallback=function(d,o,r){p.jmp((()=>{var h;let g=l.get(d);if(!(this.hasOwnProperty(g)&&Q.lazyLoad)){if(i.hasOwnProperty(g)&&typeof this[g]=="number"&&this[g]==r)return;if(g==null){let v=j(this),f=v?.t;if(f&&!(f&8)&&f&128&&r!==o){let H=this,O=(h=e.F)==null?void 0:h[d];O?.forEach(($=>{H[$]!=null&&H[$].call(H,r,o,d)}))}return}}let m=Object.getOwnPropertyDescriptor(i,g);r=r===null&&typeof this[g]=="boolean"?!1:r,r!==this[g]&&(!m.get||m.set)&&(this[g]=r)}))},t.observedAttributes=Array.from(new Set([...Object.keys((a=e.F)!=null?a:{}),...c.filter((([d,o])=>o[0]&15)).map((([d,o])=>{var r;let h=o[1]||d;return l.set(h,d),o[0]&512&&((r=e.L)==null||r.push([d,h])),h}))]))}}return t},Bt=async(t,e,n,s)=>{let a;if((e.t&32)===0){e.t|=32;{a=t.constructor;let l=t.localName;customElements.whenDefined(l).then((()=>e.t|=128))}if(a&&a.style){let l;typeof a.style=="string"&&(l=a.style);let d=qt(n);if(!J.has(d)){let o=A("registerStyles",n.U);Wt(d,l,!!(n.t&1)),o()}}}let i=e.P,c=()=>bt(e,!0);i&&i["s-rc"]?i["s-rc"].push(c):c()},En=(t,e)=>{},zn=t=>{if((p.t&1)===0){let e=j(t),n=e.i,s=A("connectedCallback",n.U);if(e.t&1)ne(t,e,n.W),e?.V||e?.o&&e.o.then((()=>En()));else{e.t|=1;let a;if(a=t.getAttribute(U),a){if(n.t&1){let i=Gt(t.shadowRoot,n);t.classList.remove(i+"-h",i+"-s")}on(t,n.U,a,e)}{let i=t;for(;i=i.parentNode||i.host;)if(i.nodeType===1&&i.hasAttribute("s-id")&&i["s-p"]||i["s-p"]){ee(e,e.P=i);break}}n.N&&Object.entries(n.N).map((([i,[c]])=>{if(c&31&&t.hasOwnProperty(i)){let l=t[i];delete t[i],t[i]=l}})),Q.initializeNextTick?X((()=>Bt(t,e,n))):Bt(t,e,n)}s()}},Nn=async t=>{if((p.t&1)===0){let e=j(t);e.H&&(e.H.map((n=>n())),e.H=void 0)}R.has(t)&&R.delete(t),t.shadowRoot&&R.has(t.shadowRoot)&&R.delete(t.shadowRoot)},N=(t,e)=>{let n={t:e[0],U:e[1]};n.N=e[2],n.W=e[3],n.F=t.F,n.L=[],dn();let s=t.prototype.connectedCallback,a=t.prototype.disconnectedCallback;return Object.assign(t.prototype,{__hasHostListenerAttached:!1,__registerHost(){_e(this,n)},connectedCallback(){if(!this.__hasHostListenerAttached){let i=j(this);ne(this,i,n.W),this.__hasHostListenerAttached=!0}zn(this),s&&s.call(this)},disconnectedCallback(){Nn(this),a&&a.call(this)},__attachShadow(){if(!this.shadowRoot)Fe.call(this,n);else if(this.shadowRoot.mode!=="open")throw new Error(`Unable to re-use existing shadow root for ${n.U}! Mode is set to ${this.shadowRoot.mode} but Stencil only supports open shadow roots.`)}}),t.is=n.U,Sn(t,n,3)};var ne=(t,e,n,s)=>{n&&y.document&&n.map((([a,i,c])=>{let l=jn(y.document,t,a),d=$n(e,c),o=An(a);p.ael(l,i,d,o),(e.H=e.H||[]).push((()=>p.rel(l,i,d,o)))}))},$n=(t,e)=>n=>{try{t.$hostElement$[e](n)}catch(s){V(s,t.$hostElement$)}},jn=(t,e,n)=>n&4?t:n&8?y:e,An=t=>Oe?{passive:(t&1)!==0,capture:(t&2)!==0}:(t&2)!==0;function On(){let t=[];for(let e=0;e<=1250;e+=25)t.push(e.toString());return t}var B=On();var Tn='@layer reset, default, limit, role, margin;@layer reset{:host{color:var(--gcds-heading-default-text);display:block}:host :is(h1,h2,h3,h4,h5,h6){box-sizing:border-box;margin:0}:host slot{display:initial}}@layer default{:host :is(h1,h2,h3,h4,h5,h6){text-wrap:balance}:host h1.gcds-heading{font:var(--gcds-heading-h1-desktop)}@media only screen and (width < 48em){:host h1.gcds-heading{font:var(--gcds-heading-h1-mobile)}}:host h1.gcds-heading:after{background-color:var(--gcds-heading-h1-border-background);content:"";display:block;height:var(--gcds-heading-h1-border-height);margin-block-start:var(--gcds-heading-h1-border-margin);width:var(--gcds-heading-h1-border-width)}:host h2.gcds-heading{font:var(--gcds-heading-h2-desktop)}@media only screen and (width < 48em){:host h2.gcds-heading{font:var(--gcds-heading-h2-mobile)}}:host h3.gcds-heading{font:var(--gcds-heading-h3-desktop)}@media only screen and (width < 48em){:host h3.gcds-heading{font:var(--gcds-heading-h3-mobile)}}:host h4.gcds-heading{font:var(--gcds-heading-h4-desktop)}@media only screen and (width < 48em){:host h4.gcds-heading{font:var(--gcds-heading-h4-mobile)}}:host h5.gcds-heading{font:var(--gcds-heading-h5-desktop)}@media only screen and (width < 48em){:host h5.gcds-heading{font:var(--gcds-heading-h5-mobile)}}:host h6.gcds-heading{font:var(--gcds-heading-h6-desktop)}@media only screen and (width < 48em){:host h6.gcds-heading{font:var(--gcds-heading-h6-mobile)}}}@layer limit{:host h1.limit{max-width:var(--gcds-heading-character-limit-h1)}:host h2.limit{max-width:var(--gcds-heading-character-limit-h2)}:host h3.limit{max-width:var(--gcds-heading-character-limit-h3)}:host h4.limit{max-width:var(--gcds-heading-character-limit-h4)}:host h5.limit{max-width:var(--gcds-heading-character-limit-h5)}:host h6.limit{max-width:var(--gcds-heading-character-limit-h6)}}@layer margin{:host :is(h1,h2,h3,h4,h5,h6).mt-0{margin-block-start:var(--gcds-heading-spacing-0)}:host :is(h1,h2,h3,h4,h5,h6).mt-25{margin-block-start:var(--gcds-heading-spacing-25)}:host :is(h1,h2,h3,h4,h5,h6).mt-50{margin-block-start:var(--gcds-heading-spacing-50)}:host :is(h1,h2,h3,h4,h5,h6).mt-75{margin-block-start:var(--gcds-heading-spacing-75)}:host :is(h1,h2,h3,h4,h5,h6).mt-100{margin-block-start:var(--gcds-heading-spacing-100)}:host :is(h1,h2,h3,h4,h5,h6).mt-125{margin-block-start:var(--gcds-heading-spacing-125)}:host :is(h1,h2,h3,h4,h5,h6).mt-150{margin-block-start:var(--gcds-heading-spacing-150)}:host :is(h1,h2,h3,h4,h5,h6).mt-175{margin-block-start:var(--gcds-heading-spacing-175)}:host :is(h1,h2,h3,h4,h5,h6).mt-200{margin-block-start:var(--gcds-heading-spacing-200)}:host :is(h1,h2,h3,h4,h5,h6).mt-225{margin-block-start:var(--gcds-heading-spacing-225)}:host :is(h1,h2,h3,h4,h5,h6).mt-250{margin-block-start:var(--gcds-heading-spacing-250)}:host :is(h1,h2,h3,h4,h5,h6).mt-300{margin-block-start:var(--gcds-heading-spacing-300)}:host :is(h1,h2,h3,h4,h5,h6).mt-350{margin-block-start:var(--gcds-heading-spacing-350)}:host :is(h1,h2,h3,h4,h5,h6).mt-400{margin-block-start:var(--gcds-heading-spacing-400)}:host :is(h1,h2,h3,h4,h5,h6).mt-450{margin-block-start:var(--gcds-heading-spacing-450)}:host :is(h1,h2,h3,h4,h5,h6).mt-500{margin-block-start:var(--gcds-heading-spacing-500)}:host :is(h1,h2,h3,h4,h5,h6).mt-550{margin-block-start:var(--gcds-heading-spacing-550)}:host :is(h1,h2,h3,h4,h5,h6).mt-600{margin-block-start:var(--gcds-heading-spacing-600)}:host :is(h1,h2,h3,h4,h5,h6).mt-650{margin-block-start:var(--gcds-heading-spacing-650)}:host :is(h1,h2,h3,h4,h5,h6).mt-700{margin-block-start:var(--gcds-heading-spacing-700)}:host :is(h1,h2,h3,h4,h5,h6).mt-750{margin-block-start:var(--gcds-heading-spacing-750)}:host :is(h1,h2,h3,h4,h5,h6).mt-800{margin-block-start:var(--gcds-heading-spacing-800)}:host :is(h1,h2,h3,h4,h5,h6).mt-850{margin-block-start:var(--gcds-heading-spacing-850)}:host :is(h1,h2,h3,h4,h5,h6).mt-900{margin-block-start:var(--gcds-heading-spacing-900)}:host :is(h1,h2,h3,h4,h5,h6).mt-950{margin-block-start:var(--gcds-heading-spacing-950)}:host :is(h1,h2,h3,h4,h5,h6).mt-1000{margin-block-start:var(--gcds-heading-spacing-1000)}:host :is(h1,h2,h3,h4,h5,h6).mt-1050{margin-block-start:var(--gcds-heading-spacing-1050)}:host :is(h1,h2,h3,h4,h5,h6).mt-1100{margin-block-start:var(--gcds-heading-spacing-1100)}:host :is(h1,h2,h3,h4,h5,h6).mt-1150{margin-block-start:var(--gcds-heading-spacing-1150)}:host :is(h1,h2,h3,h4,h5,h6).mt-1200{margin-block-start:var(--gcds-heading-spacing-1200)}:host :is(h1,h2,h3,h4,h5,h6).mt-1250{margin-block-start:var(--gcds-heading-spacing-1250)}:host :is(h1,h2,h3,h4,h5,h6).mb-0{margin-block-end:var(--gcds-heading-spacing-0)}:host :is(h1,h2,h3,h4,h5,h6).mb-25{margin-block-end:var(--gcds-heading-spacing-25)}:host :is(h1,h2,h3,h4,h5,h6).mb-50{margin-block-end:var(--gcds-heading-spacing-50)}:host :is(h1,h2,h3,h4,h5,h6).mb-75{margin-block-end:var(--gcds-heading-spacing-75)}:host :is(h1,h2,h3,h4,h5,h6).mb-100{margin-block-end:var(--gcds-heading-spacing-100)}:host :is(h1,h2,h3,h4,h5,h6).mb-125{margin-block-end:var(--gcds-heading-spacing-125)}:host :is(h1,h2,h3,h4,h5,h6).mb-150{margin-block-end:var(--gcds-heading-spacing-150)}:host :is(h1,h2,h3,h4,h5,h6).mb-175{margin-block-end:var(--gcds-heading-spacing-175)}:host :is(h1,h2,h3,h4,h5,h6).mb-200{margin-block-end:var(--gcds-heading-spacing-200)}:host :is(h1,h2,h3,h4,h5,h6).mb-225{margin-block-end:var(--gcds-heading-spacing-225)}:host :is(h1,h2,h3,h4,h5,h6).mb-250{margin-block-end:var(--gcds-heading-spacing-250)}:host :is(h1,h2,h3,h4,h5,h6).mb-300{margin-block-end:var(--gcds-heading-spacing-300)}:host :is(h1,h2,h3,h4,h5,h6).mb-350{margin-block-end:var(--gcds-heading-spacing-350)}:host :is(h1,h2,h3,h4,h5,h6).mb-400{margin-block-end:var(--gcds-heading-spacing-400)}:host :is(h1,h2,h3,h4,h5,h6).mb-450{margin-block-end:var(--gcds-heading-spacing-450)}:host :is(h1,h2,h3,h4,h5,h6).mb-500{margin-block-end:var(--gcds-heading-spacing-500)}:host :is(h1,h2,h3,h4,h5,h6).mb-550{margin-block-end:var(--gcds-heading-spacing-550)}:host :is(h1,h2,h3,h4,h5,h6).mb-600{margin-block-end:var(--gcds-heading-spacing-600)}:host :is(h1,h2,h3,h4,h5,h6).mb-650{margin-block-end:var(--gcds-heading-spacing-650)}:host :is(h1,h2,h3,h4,h5,h6).mb-700{margin-block-end:var(--gcds-heading-spacing-700)}:host :is(h1,h2,h3,h4,h5,h6).mb-750{margin-block-end:var(--gcds-heading-spacing-750)}:host :is(h1,h2,h3,h4,h5,h6).mb-800{margin-block-end:var(--gcds-heading-spacing-800)}:host :is(h1,h2,h3,h4,h5,h6).mb-850{margin-block-end:var(--gcds-heading-spacing-850)}:host :is(h1,h2,h3,h4,h5,h6).mb-900{margin-block-end:var(--gcds-heading-spacing-900)}:host :is(h1,h2,h3,h4,h5,h6).mb-950{margin-block-end:var(--gcds-heading-spacing-950)}:host :is(h1,h2,h3,h4,h5,h6).mb-1000{margin-block-end:var(--gcds-heading-spacing-1000)}:host :is(h1,h2,h3,h4,h5,h6).mb-1050{margin-block-end:var(--gcds-heading-spacing-1050)}:host :is(h1,h2,h3,h4,h5,h6).mb-1100{margin-block-end:var(--gcds-heading-spacing-1100)}:host :is(h1,h2,h3,h4,h5,h6).mb-1150{margin-block-end:var(--gcds-heading-spacing-1150)}:host :is(h1,h2,h3,h4,h5,h6).mb-1200{margin-block-end:var(--gcds-heading-spacing-1200)}:host :is(h1,h2,h3,h4,h5,h6).mb-1250{margin-block-end:var(--gcds-heading-spacing-1250)}}@layer role{:host .gcds-heading.role-primary{color:var(--gcds-heading-role-primary)}:host .gcds-heading.role-secondary{color:var(--gcds-heading-role-secondary)}:host .gcds-heading.role-light{color:var(--gcds-heading-role-light)}}',se=N(class extends E{constructor(){super(),this.__registerHost(),this.__attachShadow(),this.headingRole="primary",this.characterLimit=!0,this.marginBottom="300"}validateTag(e){["h1","h2","h3","h4","h5","h6"].includes(e)||console.error("Not a valid tag.")}validateHeadingRole(e){["light","primary","secondary"].includes(e)||(this.headingRole="primary")}validateMarginTop(e){(!this.marginTop||this.marginTop&&!B.includes(e))&&(this.marginTop=this.tag==="h1"?"0":"600")}validateMarginBottom(e){this.marginBottom&&!B.includes(e)&&(this.marginBottom="300")}componentWillLoad(){this.validateTag(this.tag),this.validateMarginTop(this.marginTop),this.validateMarginBottom(this.marginBottom)}render(){let{characterLimit:e,marginTop:n,marginBottom:s,tag:a,headingRole:i}=this;return u(S,{key:"27a2ae93a052f3ed90830b1834c510a3da6aaeb1"},u(a,{key:"582d4079c24ad038345816c59331500238824e03",class:`
+            gcds-heading
+            ${i?`role-${i}`:""}
+            ${e?"limit":""}
+            ${n?`mt-${n}`:""}
+            ${s?`mb-${s}`:""}
+          `},u("slot",{key:"54569b6f4c34e43be86c45e61b80723e3aa3043c"})))}get el(){return this}static get watchers(){return{tag:["validateTag"],headingRole:["validateHeadingRole"],marginTop:["validateMarginTop"],marginBottom:["validateMarginBottom"]}}static get style(){return Tn}},[1,"gcds-heading",{tag:[1025],headingRole:[1025,"heading-role"],characterLimit:[4,"character-limit"],marginTop:[1025,"margin-top"],marginBottom:[1025,"margin-bottom"]},void 0,{tag:["validateTag"],headingRole:["validateHeadingRole"],marginTop:["validateMarginTop"],marginBottom:["validateMarginBottom"]}]);function ie(){if(typeof customElements>"u")return;["gcds-heading"].forEach((e=>{e==="gcds-heading"&&(customElements.get(e)||customElements.define(e,se))}))}var ae=ie;var Cn="@layer reset, default, display, limit, margin, role, size, style, weight;@layer reset{:host{color:var(--gcds-text-role-primary);display:block}:host .gcds-text{box-sizing:border-box;display:inherit;margin:0}:host .gcds-text slot{display:initial}}@layer default{:host .gcds-text{font:var(--gcds-text-size-body-desktop)}@media only screen and (width < 48em){:host .gcds-text{font:var(--gcds-text-size-body-mobile)}}}@layer display{:host.d-block{display:block}:host.d-flex{display:flex}:host.d-inline{display:inline}:host.d-inline-block{display:inline-block}:host.d-inline-flex{display:inline-flex}:host.d-none{display:none}}@layer limit{:host .gcds-text.limit{max-width:var(--gcds-text-character-limit)}}@layer margin{:host .gcds-text.mt-0{margin-block-start:var(--gcds-text-spacing-0)}:host .gcds-text.mt-25{margin-block-start:var(--gcds-text-spacing-25)}:host .gcds-text.mt-50{margin-block-start:var(--gcds-text-spacing-50)}:host .gcds-text.mt-75{margin-block-start:var(--gcds-text-spacing-75)}:host .gcds-text.mt-100{margin-block-start:var(--gcds-text-spacing-100)}:host .gcds-text.mt-125{margin-block-start:var(--gcds-text-spacing-125)}:host .gcds-text.mt-150{margin-block-start:var(--gcds-text-spacing-150)}:host .gcds-text.mt-175{margin-block-start:var(--gcds-text-spacing-175)}:host .gcds-text.mt-200{margin-block-start:var(--gcds-text-spacing-200)}:host .gcds-text.mt-225{margin-block-start:var(--gcds-text-spacing-225)}:host .gcds-text.mt-250{margin-block-start:var(--gcds-text-spacing-250)}:host .gcds-text.mt-300{margin-block-start:var(--gcds-text-spacing-300)}:host .gcds-text.mt-350{margin-block-start:var(--gcds-text-spacing-350)}:host .gcds-text.mt-400{margin-block-start:var(--gcds-text-spacing-400)}:host .gcds-text.mt-450{margin-block-start:var(--gcds-text-spacing-450)}:host .gcds-text.mt-500{margin-block-start:var(--gcds-text-spacing-500)}:host .gcds-text.mt-550{margin-block-start:var(--gcds-text-spacing-550)}:host .gcds-text.mt-600{margin-block-start:var(--gcds-text-spacing-600)}:host .gcds-text.mt-650{margin-block-start:var(--gcds-text-spacing-650)}:host .gcds-text.mt-700{margin-block-start:var(--gcds-text-spacing-700)}:host .gcds-text.mt-750{margin-block-start:var(--gcds-text-spacing-750)}:host .gcds-text.mt-800{margin-block-start:var(--gcds-text-spacing-800)}:host .gcds-text.mt-850{margin-block-start:var(--gcds-text-spacing-850)}:host .gcds-text.mt-900{margin-block-start:var(--gcds-text-spacing-900)}:host .gcds-text.mt-950{margin-block-start:var(--gcds-text-spacing-950)}:host .gcds-text.mt-1000{margin-block-start:var(--gcds-text-spacing-1000)}:host .gcds-text.mt-1050{margin-block-start:var(--gcds-text-spacing-1050)}:host .gcds-text.mt-1100{margin-block-start:var(--gcds-text-spacing-1100)}:host .gcds-text.mt-1150{margin-block-start:var(--gcds-text-spacing-1150)}:host .gcds-text.mt-1200{margin-block-start:var(--gcds-text-spacing-1200)}:host .gcds-text.mt-1250{margin-block-start:var(--gcds-text-spacing-1250)}:host .gcds-text.mb-0{margin-block-end:var(--gcds-text-spacing-0)}:host .gcds-text.mb-25{margin-block-end:var(--gcds-text-spacing-25)}:host .gcds-text.mb-50{margin-block-end:var(--gcds-text-spacing-50)}:host .gcds-text.mb-75{margin-block-end:var(--gcds-text-spacing-75)}:host .gcds-text.mb-100{margin-block-end:var(--gcds-text-spacing-100)}:host .gcds-text.mb-125{margin-block-end:var(--gcds-text-spacing-125)}:host .gcds-text.mb-150{margin-block-end:var(--gcds-text-spacing-150)}:host .gcds-text.mb-175{margin-block-end:var(--gcds-text-spacing-175)}:host .gcds-text.mb-200{margin-block-end:var(--gcds-text-spacing-200)}:host .gcds-text.mb-225{margin-block-end:var(--gcds-text-spacing-225)}:host .gcds-text.mb-250{margin-block-end:var(--gcds-text-spacing-250)}:host .gcds-text.mb-300{margin-block-end:var(--gcds-text-spacing-300)}:host .gcds-text.mb-350{margin-block-end:var(--gcds-text-spacing-350)}:host .gcds-text.mb-400{margin-block-end:var(--gcds-text-spacing-400)}:host .gcds-text.mb-450{margin-block-end:var(--gcds-text-spacing-450)}:host .gcds-text.mb-500{margin-block-end:var(--gcds-text-spacing-500)}:host .gcds-text.mb-550{margin-block-end:var(--gcds-text-spacing-550)}:host .gcds-text.mb-600{margin-block-end:var(--gcds-text-spacing-600)}:host .gcds-text.mb-650{margin-block-end:var(--gcds-text-spacing-650)}:host .gcds-text.mb-700{margin-block-end:var(--gcds-text-spacing-700)}:host .gcds-text.mb-750{margin-block-end:var(--gcds-text-spacing-750)}:host .gcds-text.mb-800{margin-block-end:var(--gcds-text-spacing-800)}:host .gcds-text.mb-850{margin-block-end:var(--gcds-text-spacing-850)}:host .gcds-text.mb-900{margin-block-end:var(--gcds-text-spacing-900)}:host .gcds-text.mb-950{margin-block-end:var(--gcds-text-spacing-950)}:host .gcds-text.mb-1000{margin-block-end:var(--gcds-text-spacing-1000)}:host .gcds-text.mb-1050{margin-block-end:var(--gcds-text-spacing-1050)}:host .gcds-text.mb-1100{margin-block-end:var(--gcds-text-spacing-1100)}:host .gcds-text.mb-1150{margin-block-end:var(--gcds-text-spacing-1150)}:host .gcds-text.mb-1200{margin-block-end:var(--gcds-text-spacing-1200)}:host .gcds-text.mb-1250{margin-block-end:var(--gcds-text-spacing-1250)}}@layer variants.role{:host .gcds-text.role-primary{color:var(--gcds-text-role-primary)}:host .gcds-text.role-secondary{color:var(--gcds-text-role-secondary)}:host .gcds-text.role-light{color:var(--gcds-text-role-light)}}@layer variants.size{:host .gcds-text :is(small,::slotted(small)),:host .gcds-text.size-small{font:var(--gcds-text-size-small-desktop)}@media only screen and (width < 48em){:host .gcds-text :is(small,::slotted(small)),:host .gcds-text.size-small{font:var(--gcds-text-size-small-mobile)}}}@layer variants.style{:host .gcds-text ::slotted(em){font-style:italic}}@layer variants.weight{:host .gcds-text ::slotted(strong){font-weight:var(--gcds-text-weight-bold)}}",oe=N(class extends E{constructor(){super(),this.__registerHost(),this.__attachShadow(),this.textRole="primary",this.characterLimit=!0,this.display="block",this.marginTop="0",this.marginBottom="300",this.size="body"}validateTextRole(e){["light","primary","secondary"].includes(e)||(this.textRole="primary")}validateDisplay(e){["block","flex","inline","inline-block","inline-flex","none"].includes(e)||(this.display="block")}validateMarginTop(e){B.includes(e)||(this.marginTop="0")}validateMarginBottom(e){B.includes(e)||(this.marginBottom="300")}validateSize(e){["body","small"].includes(e)||(this.size="body")}componentWillLoad(){this.validateTextRole(this.textRole),this.validateDisplay(this.display),this.validateMarginTop(this.marginTop),this.validateMarginBottom(this.marginBottom),this.validateSize(this.size)}render(){let{characterLimit:e,display:n,marginTop:s,marginBottom:a,size:i,textRole:c}=this;return u(S,{key:"60d33fada39b1dd1af0af482be9d9d3d158d248b",class:`${n!="block"?`d-${n}`:""}`},u("p",{key:"5c890123f5244dd5a67f01819bbd309d67f2458a",class:`
+            gcds-text
+            ${c?`role-${c}`:""}
+            ${e?"limit":""}
+            ${s?`mt-${s}`:""}
+            ${a?`mb-${a}`:""}
+            ${i==="small"?"size-small":""}
+          `,part:"text"},i==="small"?u("small",null,u("slot",null)):u("slot",null)))}get el(){return this}static get watchers(){return{textRole:["validateTextRole"],display:["validateDisplay"],marginTop:["validateMarginTop"],marginBottom:["validateMarginBottom"],size:["validateSize"]}}static get style(){return Cn}},[1,"gcds-text",{textRole:[1025,"text-role"],characterLimit:[4,"character-limit"],display:[1025],marginTop:[1025,"margin-top"],marginBottom:[1025,"margin-bottom"],size:[1025]},void 0,{textRole:["validateTextRole"],display:["validateDisplay"],marginTop:["validateMarginTop"],marginBottom:["validateMarginBottom"],size:["validateSize"]}]);function re(){if(typeof customElements>"u")return;["gcds-text"].forEach((e=>{e==="gcds-text"&&(customElements.get(e)||customElements.define(e,oe))}))}var le=re;var G=(t,e,n=[])=>{let s={};for(let a=0;a<t.attributes.length;a++){let i=t.attributes[a];i.name.includes("aria-")&&(s[i.name]=i.value)}return n.forEach((a=>{(t.hasAttribute(a)||e&&e.hasAttribute(a))&&((t.getAttribute(a)||e.getAttribute(a))!==null&&(s[a]=t.getAttribute(a)||e.getAttribute(a)),t.removeAttribute(a))})),s},Z=t=>{var e;let n="";if(t.getAttribute("lang"))t.getAttribute("lang")=="en"?n="en":n="fr";else{let s=(e=ce("[lang]",t))===null||e===void 0?void 0:e.getAttribute("lang");s=="en"||!s?n="en":n="fr"}return n},ce=(t,e)=>e?e&&e!=document&&typeof window<"u"&&e!=window&&e.closest(t)||ce(t,e.getRootNode().host):null,tt={attributes:!0,attributeOldValue:!0,attributeFilter:["lang"]},P=(t,e,n)=>e.emit(n).defaultPrevented||t.defaultPrevented?(t.preventDefault(),!1):!0;var de={en:{nameError:"gcds-icon: Invalid name."},fr:{nameError:"gcds-icon: Nom invalide."}},Rn=`@layer reset, default, names, margin, size;
+@layer reset {
+  :host {
+    display: inline-block;
+  }
+  :host :host .gcds-icon {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+}
+@layer default {
+  :host .gcds-icon {
+    font-family: var(--gcds-icon-font-family) !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+@layer names {
+  :host .gcds-icon-checkmark-circle:before {
+    content: "\\e908";
+  }
+  :host .gcds-icon-chevron-down:before {
+    content: "\\e900";
+  }
+  :host .gcds-icon-chevron-left:before {
+    content: "\\e901";
+  }
+  :host .gcds-icon-chevron-right:before {
+    content: "\\e902";
+  }
+  :host .gcds-icon-chevron-up:before {
+    content: "\\e903";
+  }
+  :host .gcds-icon-close:before {
+    content: "\\e90b";
+  }
+  :host .gcds-icon-download:before {
+    content: "\\e906";
+  }
+  :host .gcds-icon-email:before {
+    content: "\\e905";
+  }
+  :host .gcds-icon-exclamation-circle:before {
+    content: "\\e909";
+  }
+  :host .gcds-icon-external:before {
+    content: "\\e904";
+  }
+  :host .gcds-icon-info-circle:before {
+    content: "\\e90a";
+  }
+  :host .gcds-icon-phone:before {
+    content: "\\e90c";
+  }
+  :host .gcds-icon-search:before {
+    content: "\\e907";
+  }
+  :host .gcds-icon-warning-triangle:before {
+    content: "\\e90d";
+  }
+}
+@layer margin {
+  :host .gcds-icon {
+    /* Margin left */
+  }
+  :host .gcds-icon.ml-0 {
+    margin-inline-start: var(--gcds-icon-margin-0);
+  }
+  :host .gcds-icon.ml-25 {
+    margin-inline-start: var(--gcds-icon-margin-25);
+  }
+  :host .gcds-icon.ml-50 {
+    margin-inline-start: var(--gcds-icon-margin-50);
+  }
+  :host .gcds-icon.ml-75 {
+    margin-inline-start: var(--gcds-icon-margin-75);
+  }
+  :host .gcds-icon.ml-100 {
+    margin-inline-start: var(--gcds-icon-margin-100);
+  }
+  :host .gcds-icon.ml-125 {
+    margin-inline-start: var(--gcds-icon-margin-125);
+  }
+  :host .gcds-icon.ml-150 {
+    margin-inline-start: var(--gcds-icon-margin-150);
+  }
+  :host .gcds-icon.ml-175 {
+    margin-inline-start: var(--gcds-icon-margin-175);
+  }
+  :host .gcds-icon.ml-200 {
+    margin-inline-start: var(--gcds-icon-margin-200);
+  }
+  :host .gcds-icon.ml-225 {
+    margin-inline-start: var(--gcds-icon-margin-225);
+  }
+  :host .gcds-icon.ml-250 {
+    margin-inline-start: var(--gcds-icon-margin-250);
+  }
+  :host .gcds-icon.ml-300 {
+    margin-inline-start: var(--gcds-icon-margin-300);
+  }
+  :host .gcds-icon.ml-350 {
+    margin-inline-start: var(--gcds-icon-margin-350);
+  }
+  :host .gcds-icon.ml-400 {
+    margin-inline-start: var(--gcds-icon-margin-400);
+  }
+  :host .gcds-icon.ml-450 {
+    margin-inline-start: var(--gcds-icon-margin-450);
+  }
+  :host .gcds-icon.ml-500 {
+    margin-inline-start: var(--gcds-icon-margin-500);
+  }
+  :host .gcds-icon.ml-550 {
+    margin-inline-start: var(--gcds-icon-margin-550);
+  }
+  :host .gcds-icon.ml-600 {
+    margin-inline-start: var(--gcds-icon-margin-600);
+  }
+  :host .gcds-icon.ml-650 {
+    margin-inline-start: var(--gcds-icon-margin-650);
+  }
+  :host .gcds-icon.ml-700 {
+    margin-inline-start: var(--gcds-icon-margin-700);
+  }
+  :host .gcds-icon.ml-750 {
+    margin-inline-start: var(--gcds-icon-margin-750);
+  }
+  :host .gcds-icon.ml-800 {
+    margin-inline-start: var(--gcds-icon-margin-800);
+  }
+  :host .gcds-icon.ml-850 {
+    margin-inline-start: var(--gcds-icon-margin-850);
+  }
+  :host .gcds-icon.ml-900 {
+    margin-inline-start: var(--gcds-icon-margin-900);
+  }
+  :host .gcds-icon.ml-950 {
+    margin-inline-start: var(--gcds-icon-margin-950);
+  }
+  :host .gcds-icon.ml-1000 {
+    margin-inline-start: var(--gcds-icon-margin-1000);
+  }
+  :host .gcds-icon.ml-1050 {
+    margin-inline-start: var(--gcds-icon-margin-1050);
+  }
+  :host .gcds-icon.ml-1100 {
+    margin-inline-start: var(--gcds-icon-margin-1100);
+  }
+  :host .gcds-icon.ml-1150 {
+    margin-inline-start: var(--gcds-icon-margin-1150);
+  }
+  :host .gcds-icon.ml-1200 {
+    margin-inline-start: var(--gcds-icon-margin-1200);
+  }
+  :host .gcds-icon.ml-1250 {
+    margin-inline-start: var(--gcds-icon-margin-1250);
+  }
+  :host .gcds-icon {
+    /* Margin right */
+  }
+  :host .gcds-icon.mr-0 {
+    margin-inline-end: var(--gcds-icon-margin-0);
+  }
+  :host .gcds-icon.mr-25 {
+    margin-inline-end: var(--gcds-icon-margin-25);
+  }
+  :host .gcds-icon.mr-50 {
+    margin-inline-end: var(--gcds-icon-margin-50);
+  }
+  :host .gcds-icon.mr-75 {
+    margin-inline-end: var(--gcds-icon-margin-75);
+  }
+  :host .gcds-icon.mr-100 {
+    margin-inline-end: var(--gcds-icon-margin-100);
+  }
+  :host .gcds-icon.mr-125 {
+    margin-inline-end: var(--gcds-icon-margin-125);
+  }
+  :host .gcds-icon.mr-150 {
+    margin-inline-end: var(--gcds-icon-margin-150);
+  }
+  :host .gcds-icon.mr-175 {
+    margin-inline-end: var(--gcds-icon-margin-175);
+  }
+  :host .gcds-icon.mr-200 {
+    margin-inline-end: var(--gcds-icon-margin-200);
+  }
+  :host .gcds-icon.mr-225 {
+    margin-inline-end: var(--gcds-icon-margin-225);
+  }
+  :host .gcds-icon.mr-250 {
+    margin-inline-end: var(--gcds-icon-margin-250);
+  }
+  :host .gcds-icon.mr-300 {
+    margin-inline-end: var(--gcds-icon-margin-300);
+  }
+  :host .gcds-icon.mr-350 {
+    margin-inline-end: var(--gcds-icon-margin-350);
+  }
+  :host .gcds-icon.mr-400 {
+    margin-inline-end: var(--gcds-icon-margin-400);
+  }
+  :host .gcds-icon.mr-450 {
+    margin-inline-end: var(--gcds-icon-margin-450);
+  }
+  :host .gcds-icon.mr-500 {
+    margin-inline-end: var(--gcds-icon-margin-500);
+  }
+  :host .gcds-icon.mr-550 {
+    margin-inline-end: var(--gcds-icon-margin-550);
+  }
+  :host .gcds-icon.mr-600 {
+    margin-inline-end: var(--gcds-icon-margin-600);
+  }
+  :host .gcds-icon.mr-650 {
+    margin-inline-end: var(--gcds-icon-margin-650);
+  }
+  :host .gcds-icon.mr-700 {
+    margin-inline-end: var(--gcds-icon-margin-700);
+  }
+  :host .gcds-icon.mr-750 {
+    margin-inline-end: var(--gcds-icon-margin-750);
+  }
+  :host .gcds-icon.mr-800 {
+    margin-inline-end: var(--gcds-icon-margin-800);
+  }
+  :host .gcds-icon.mr-850 {
+    margin-inline-end: var(--gcds-icon-margin-850);
+  }
+  :host .gcds-icon.mr-900 {
+    margin-inline-end: var(--gcds-icon-margin-900);
+  }
+  :host .gcds-icon.mr-950 {
+    margin-inline-end: var(--gcds-icon-margin-950);
+  }
+  :host .gcds-icon.mr-1000 {
+    margin-inline-end: var(--gcds-icon-margin-1000);
+  }
+  :host .gcds-icon.mr-1050 {
+    margin-inline-end: var(--gcds-icon-margin-1050);
+  }
+  :host .gcds-icon.mr-1100 {
+    margin-inline-end: var(--gcds-icon-margin-1100);
+  }
+  :host .gcds-icon.mr-1150 {
+    margin-inline-end: var(--gcds-icon-margin-1150);
+  }
+  :host .gcds-icon.mr-1200 {
+    margin-inline-end: var(--gcds-icon-margin-1200);
+  }
+  :host .gcds-icon.mr-1250 {
+    margin-inline-end: var(--gcds-icon-margin-1250);
+  }
+}
+@layer size {
+  :host .gcds-icon.size-text-small {
+    font-size: var(--gcds-icon-font-size-text-small);
+    line-height: var(--gcds-icon-line-height-text-small);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-text-small {
+      font-size: var(--gcds-icon-font-size-text-small-mobile);
+      line-height: var(--gcds-icon-line-height-text-small-mobile);
+    }
+  }
+  :host .gcds-icon.size-text {
+    font-size: var(--gcds-icon-font-size-text);
+    line-height: var(--gcds-icon-line-height-text);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-text {
+      font-size: var(--gcds-icon-font-size-text-mobile);
+      line-height: var(--gcds-icon-line-height-text-mobile);
+    }
+  }
+  :host .gcds-icon.size-h6 {
+    font-size: var(--gcds-icon-font-size-h6);
+    line-height: var(--gcds-icon-line-height-h6);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-h6 {
+      font-size: var(--gcds-icon-font-size-h6-mobile);
+      line-height: var(--gcds-icon-line-height-h6-mobile);
+    }
+  }
+  :host .gcds-icon.size-h5 {
+    font-size: var(--gcds-icon-font-size-h5);
+    line-height: var(--gcds-icon-line-height-h5);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-h5 {
+      font-size: var(--gcds-icon-font-size-h5-mobile);
+      line-height: var(--gcds-icon-line-height-h5-mobile);
+    }
+  }
+  :host .gcds-icon.size-h4 {
+    font-size: var(--gcds-icon-font-size-h4);
+    line-height: var(--gcds-icon-line-height-h4);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-h4 {
+      font-size: var(--gcds-icon-font-size-h4-mobile);
+      line-height: var(--gcds-icon-line-height-h4-mobile);
+    }
+  }
+  :host .gcds-icon.size-h3 {
+    font-size: var(--gcds-icon-font-size-h3);
+    line-height: var(--gcds-icon-line-height-h3);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-h3 {
+      font-size: var(--gcds-icon-font-size-h3-mobile);
+      line-height: var(--gcds-icon-line-height-h3-mobile);
+    }
+  }
+  :host .gcds-icon.size-h2 {
+    font-size: var(--gcds-icon-font-size-h2);
+    line-height: var(--gcds-icon-line-height-h2);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-h2 {
+      font-size: var(--gcds-icon-font-size-h2-mobile);
+      line-height: var(--gcds-icon-line-height-h2-mobile);
+    }
+  }
+  :host .gcds-icon.size-h1 {
+    font-size: var(--gcds-icon-font-size-h1);
+    line-height: var(--gcds-icon-line-height-h1);
+  }
+  @media only screen and (width < 48em) {
+    :host .gcds-icon.size-h1 {
+      font-size: var(--gcds-icon-font-size-h1-mobile);
+      line-height: var(--gcds-icon-line-height-h1-mobile);
+    }
+  }
+}`,Ln=N(class extends E{constructor(){super(),this.__registerHost(),this.__attachShadow(),this.size="inherit"}validateName(e){["checkmark-circle","chevron-down","chevron-left","chevron-right","chevron-up","close","download","email","exclamation-circle","external","info-circle","phone","search","warning-triangle"].includes(e)||console.error(`${de.en.nameError} | ${de.fr.nameError}`)}validateSize(e){["inherit","text-small","text","h6","h5","h4","h3","h2","h1"].includes(e)||(this.size="inherit")}componentWillLoad(){this.validateName(this.name),this.validateSize(this.size)}render(){let{label:e,marginLeft:n,marginRight:s,name:a,size:i}=this;return u(S,{key:"9767ef8285004f25317ad156ac39d21a0267c6d3"},u("span",{key:"c7a3dfe9ed1b093e5a6d9a37bdc5c11e7154b462",class:`
+            gcds-icon gcds-icon-${a}
+            ${n?`ml-${n}`:""}
+            ${s?`mr-${s}`:""}
+            ${i?`size-${i}`:""}
+          `,role:"img","aria-label":e||!1,"aria-hidden":e?"false":"true"}))}get el(){return this}static get watchers(){return{name:["validateName"],size:["validateSize"]}}static get style(){return Rn}},[1,"gcds-icon",{label:[1],marginLeft:[1,"margin-left"],marginRight:[1,"margin-right"],name:[1025],size:[1]},void 0,{name:["validateName"],size:["validateSize"]}]);function et(){if(typeof customElements>"u")return;["gcds-icon"].forEach((e=>{e==="gcds-icon"&&(customElements.get(e)||customElements.define(e,Ln))}))}var nt={en:{external:" (Opens destination in a new tab.)",phone:" (Attempts to open a phone app.)",download:" (Attempts to download a file to the device.)",email:" (Opens new message in email program.)"},fr:{external:" (Ouvre l'emplacement dans un nouvel onglet.)",phone:" (Tente d'ouvrir une application de t\xE9l\xE9phonie.)",download:" (Tente de t\xE9l\xE9charger un fichier sur l'appareil.)",email:" (Ouvre un nouveau message dans le logiciel de messagerie.)"}},Mn="@layer reset, default, display, size, variant, hover, visited, focus;@layer reset{:host{display:inline}:host slot{display:initial}}@layer default{:host .gcds-link{color:var(--gcds-link-default);cursor:pointer;text-decoration-color:currentColor;text-decoration-style:solid;text-decoration-thickness:var(--gcds-link-decoration-thickness);text-underline-offset:var(--gcds-link-underline-offset);transition:all .35s}}@layer display{:host .gcds-link.d-block{display:block}}@layer size{:host .gcds-link.link--small{font:var(--gcds-link-font-small-desktop)}@media only screen and (width < 48em){:host .gcds-link.link--small{font:var(--gcds-link-font-small-mobile)}}:host .gcds-link.link--regular{font:var(--gcds-link-font-regular-desktop)}@media only screen and (width < 48em){:host .gcds-link.link--regular{font:var(--gcds-link-font-regular-mobile)}}:host .gcds-link.link--inherit{font:inherit}}@layer variant{:host .gcds-link.variant-light{color:var(--gcds-link-light)}}@layer hover{@media (hover:hover){:host .gcds-link:hover{text-decoration-thickness:var(--gcds-link-hover-decoration-thickness)}:host .gcds-link:hover:not(.variant-light){color:var(--gcds-link-hover)}}}@layer visited{:host .gcds-link:not(.variant-light):visited{color:var(--gcds-link-visited)}}@layer focus{:host .gcds-link:focus{background-color:var(--gcds-link-focus-background);border-radius:var(--gcds-link-focus-border-radius);box-shadow:var(--gcds-link-focus-box-shadow);color:var(--gcds-link-focus-text);outline:var(--gcds-link-focus-outline-width) solid var(--gcds-link-focus-background);outline-offset:var(--gcds-link-focus-outline-offset);text-decoration:none}}",he=N(class extends E{constructor(){super(),this.__registerHost(),this.__attachShadow(),this.gcdsFocus=z(this,"gcdsFocus"),this.gcdsBlur=z(this,"gcdsBlur"),this.gcdsClick=z(this,"gcdsClick"),this.variant="default",this.size="inherit",this.display="inline",this.target="_self",this.external=!1,this.inheritedAttributes={}}validateVariant(e){["default","light"].includes(e)||(this.variant="default")}validateSize(e){["regular","small","inherit"].includes(e)||(this.size="inherit")}validateDisplay(e){["block","inline"].includes(e)||(this.display="inline")}updateLang(){new MutationObserver((n=>{n[0].oldValue!=this.el.lang&&(this.lang=this.el.lang)})).observe(this.el,tt)}componentWillLoad(){this.validateVariant(this.variant),this.validateSize(this.size),this.validateDisplay(this.display),this.inheritedAttributes=G(this.el,this.shadowElement,["referrerpolicy"]),this.lang=Z(this.el),this.updateLang()}render(){let{size:e,lang:n,display:s,href:a,rel:i,target:c,external:l,download:d,type:o,inheritedAttributes:r,variant:h}=this,g={href:a,rel:i,target:c,download:d,type:o},m=c==="_blank"||l;return u(S,{key:"8cd9092b220f6cea2f5311e3053e0fbed489b40e"},u("a",Object.assign({key:"112763038c0564dd208a1172c28c26026c27b511",tabIndex:0},g,{class:`gcds-link link--${e} ${s!="inline"?`d-${s}`:""} ${h!="default"?`variant-${h}`:""}`,ref:v=>this.shadowElement=v,target:m?"_blank":c,rel:m?"noopener noreferrer":i},r,{part:"link",onBlur:()=>this.gcdsBlur.emit(),onFocus:()=>this.gcdsFocus.emit(),onClick:v=>P(v,this.gcdsClick,a)}),u("slot",{key:"749225ef8d310a8499061c7b8e6831ea3d68cad0"}),c==="_blank"||l?u("gcds-icon",{name:"external",label:nt[n].external,"margin-left":"75"}):d!==void 0?u("gcds-icon",{name:"download",label:nt[n].download,"margin-left":"75"}):a&&a.toLowerCase().startsWith("mailto:")?u("gcds-icon",{name:"email",label:nt[n].email,"margin-left":"75"}):a&&a.toLowerCase().startsWith("tel:")&&u("gcds-icon",{name:"phone",label:nt[n].phone,"margin-left":"75"})))}get el(){return this}static get watchers(){return{variant:["validateVariant"],size:["validateSize"],display:["validateDisplay"]}}static get style(){return Mn}},[1,"gcds-link",{variant:[1025],size:[1025],display:[1025],href:[1],rel:[1],target:[1],external:[4],download:[1],type:[1],inheritedAttributes:[32],lang:[32]},void 0,{variant:["validateVariant"],size:["validateSize"],display:["validateDisplay"]}]);function ge(){if(typeof customElements>"u")return;["gcds-link","gcds-icon"].forEach((e=>{switch(e){case"gcds-link":customElements.get(e)||customElements.define(e,he);break;case"gcds-icon":customElements.get(e)||et();break}}))}var me=ge;var Bn=`@layer reset, default, hover, focus, print;@layer reset{:host{display:block}:host .details__summary{background-color:transparent;border-color:transparent;cursor:pointer;display:block}:host .details__panel slot{display:initial}:host .details__panel ::slotted(:first-child){margin-block-start:0}:host .details__panel ::slotted(:last-child){margin-block-end:0}:host .details__panel ::slotted(ol),:host .details__panel ::slotted(ul){padding:0}}@layer default{:host .gcds-details .details__summary{color:var(--gcds-details-default-text);font:var(--gcds-details-font-desktop);padding:var(--gcds-details-summary-padding);position:relative;text-align:left;text-decoration-color:currentColor;text-decoration-line:underline;text-decoration-style:solid;text-decoration-thickness:var(
+        --gcds-details-default-decoration-thickness
+      );text-underline-offset:.2em;transition:background-color .15s ease-in-out,color .15s ease-in-out}@media only screen and (width < 48em){:host .gcds-details .details__summary{font:var(--gcds-details-font-mobile)}}:host .gcds-details .details__summary:before{border-block-end:var(--gcds-details-summary-arrow-border-top-bottom) solid transparent;border-block-start:var(--gcds-details-summary-arrow-border-top-bottom) solid transparent;border-inline-start:var(--gcds-details-summary-arrow-border-left) solid currentColor;content:"";height:0;left:var(--gcds-details-summary-arrow-left);position:absolute;top:var(--gcds-details-summary-arrow-top);transition:transform .15s ease-in-out;width:0}:host .gcds-details .details__summary[aria-expanded=false]+.details__panel{clip-path:inset(100%);clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}:host .gcds-details .details__summary[aria-expanded=true]:before{transform:rotate(90deg)}:host .gcds-details .details__panel{margin:var(--gcds-details-panel-margin);padding:var(--gcds-details-panel-padding);position:relative}:host .gcds-details .details__panel summary{display:none}:host .gcds-details .details__panel:before{background-color:var(--gcds-details-panel-border-color);content:"";display:block;height:100%;left:0;position:absolute;top:0;width:var(--gcds-details-panel-border-width)}:host .gcds-details .details__panel ::slotted(*){font:var(--gcds-details-font-desktop)}@media only screen and (width < 48em){:host .gcds-details .details__panel ::slotted(*){font:var(--gcds-details-font-mobile)}}:host .gcds-details .details__panel ::slotted(:not(:last-child)){margin-block-end:var(--gcds-details-panel-slotted-margin)!important;margin-block-start:0!important}:host .gcds-details .details__panel ::slotted(ol),:host .gcds-details .details__panel ::slotted(ul){margin-inline-start:var(
+          --gcds-details-panel-slotted-margin
+        )!important}:host .gcds-details .details__panel ::slotted(small){font:var(--gcds-details-font-small-desktop)}@media only screen and (width < 48em){:host .gcds-details .details__panel ::slotted(small){font:var(--gcds-details-font-small-mobile)}}}@layer hover{@media (hover:hover){:host .gcds-details .details__summary:hover:not(:focus){color:var(--gcds-details-hover-text);text-decoration-thickness:var(--gcds-details-hover-decoration-thickness);text-underline-offset:.2em}:host .gcds-details .details__summary:hover:not(:focus):before{color:var(--gcds-details-hover-text)}}}@layer focus{:host .gcds-details .details__summary:focus{background-color:var(--gcds-details-focus-background);border-radius:var(--gcds-details-focus-border-radius);box-shadow:var(--gcds-details-focus-box-shadow);color:var(--gcds-details-focus-text);outline:var(--gcds-details-focus-outline);outline-offset:var(--gcds-details-focus-outline-offset);text-decoration:none}}@layer print{@media print{:host .gcds-details .details__summary{color:var(--gcds-details-print-summary-text);font-weight:var(--gcds-details-print-summary-font-weight);text-decoration:none}:host .gcds-details .details__summary:before{transform:rotate(90deg)}:host .gcds-details .details__panel{clip-path:none;clip:auto;border-left:var(--gcds-details-panel-border-width) solid var(--gcds-details-panel-border-color);display:block;height:auto;overflow:visible;position:static;white-space:normal;width:auto}}}`,Pn=N(class extends E{constructor(){super(),this.__registerHost(),this.__attachShadow(),this.gcdsFocus=z(this,"gcdsFocus"),this.gcdsBlur=z(this,"gcdsBlur"),this.gcdsClick=z(this,"gcdsClick"),this.open=!1,this.handleToggle=e=>{this.open=!this.open,this.open=e.target.open}}handleBeforePrint(){this.open||(this.toggle(),this.detailsElement.setAttribute("data-was-closed","true"))}handleAfterPrint(){var e;((e=this.detailsElement)===null||e===void 0?void 0:e.getAttribute("data-was-closed"))==="true"&&(this.toggle(),this.detailsElement.removeAttribute("data-was-closed"))}async toggle(){this.open=!this.open,this.detailsElement.open=this.open}render(){let{detailsTitle:e,open:n}=this;return u(S,{key:"165e069eb5507fe81e7f2e3f23d70cf3e5979aa7"},u("div",{key:"a9bbede603871396dcdbfe6d8a4a25952b611f58",class:"gcds-details"},u("button",{key:"fa1db12503e14a3e99781759a3fc5f1544a24235","aria-expanded":n.toString(),"aria-controls":"details__panel",onBlur:()=>this.gcdsBlur.emit(),onFocus:()=>this.gcdsFocus.emit(),onClick:s=>{P(s,this.gcdsClick)&&this.toggle()},class:"details__summary",id:"details__summary"},e),u("details",{key:"b63ec18b239b98bbb308989a4b71d4bda95372be",open:n,id:"details__panel",class:"details__panel","aria-labelledby":"details__summary",onToggle:s=>this.handleToggle(s),ref:s=>this.detailsElement=s},u("summary",{key:"f64cf84f9a239e19e8978e8511b94bc7b2e7dfc0"},e),u("slot",{key:"d438628d3f47d1a15f4e03a603a86f08bf25a658"}))))}get el(){return this}static get style(){return Bn}},[1,"gcds-details",{detailsTitle:[1,"details-title"],open:[1540],toggle:[64]},[[8,"beforeprint","handleBeforePrint"],[8,"afterprint","handleAfterPrint"]]]);function Hn(){if(typeof customElements>"u")return;["gcds-details"].forEach((e=>{e==="gcds-details"&&(customElements.get(e)||customElements.define(e,Pn))}))}var ue=Hn;var Dn={en:{label:"Opens in a new tab."},fr:{label:"S'ouvre dans un nouvel onglet."}},In="@layer reset, default, roles, size, disabled, hover, focus, active, mobile;@layer reset{:host{display:inline-block}:host .gcds-button{box-sizing:border-box;cursor:pointer;text-decoration:none}:host slot{display:initial}}@layer default{:host .gcds-button{border:var(--gcds-button-border-width) solid transparent;border-radius:var(--gcds-button-border-radius);display:inline-block;font:var(--gcds-button-font-desktop);padding:var(--gcds-button-padding);text-align:center;text-wrap:balance;transition:all .15s ease-in-out;width:var(--gcds-button-width)}@media only screen and (width < 48em){:host .gcds-button{font:var(--gcds-button-font-mobile)}}}@layer roles{:host .gcds-button.button--role-danger{background-color:var(--gcds-button-danger-default-background);color:var(--gcds-button-danger-default-text)}:host .gcds-button.button--role-primary{background-color:var(--gcds-button-primary-default-background);color:var(--gcds-button-primary-default-text)}:host .gcds-button.button--role-start{background-color:var(--gcds-button-start-default-background);color:var(--gcds-button-start-default-text);font:var(--gcds-button-start-font-desktop);padding:var(--gcds-button-start-padding)}@media only screen and (width < 48em){:host .gcds-button.button--role-start{font:var(--gcds-button-start-font-mobile)}}:host .gcds-button.button--role-secondary{background-color:var(--gcds-button-secondary-default-background);border:var(--gcds-button-border-width) solid;color:var(--gcds-button-secondary-default-text)}}@layer size{:host .gcds-button.button--small{font:var(--gcds-button-small-font);padding:var(--gcds-button-small-padding)}}@layer disabled{:host([disabled]){pointer-events:none}:host([disabled]) .gcds-button[aria-disabled=true]{cursor:not-allowed;opacity:var(--gcds-button-shared-disabled-opacity);pointer-events:none}}@layer hover{@media (hover:hover){:host .gcds-button:hover.button--role-danger{background-color:var(--gcds-button-danger-hover-background)}:host .gcds-button:hover.button--role-primary{background-color:var(--gcds-button-primary-hover-background)}:host .gcds-button:hover.button--role-start{background-color:var(--gcds-button-start-hover-background)}:host .gcds-button:hover.button--role-secondary{background-color:var(--gcds-button-secondary-hover-background)}}}@layer focus{:host .gcds-button:focus{background-color:var(--gcds-button-shared-focus-background);border-color:var(--gcds-button-shared-focus-background);box-shadow:var(--gcds-button-shared-focus-box-shadow);color:var(--gcds-button-shared-focus-text);outline:var(--gcds-button-shared-focus-outline-width) solid var(--gcds-button-shared-focus-background);outline-offset:var(--gcds-button-border-width)}}@layer active{:host .gcds-button:active{background-color:var(--gcds-button-shared-active-background);border-color:var(--gcds-button-shared-active-background)}}@layer mobile{@media screen and (max-width:30rem){:host{display:block}:host .gcds-button{margin:var(--gcds-button-mobile-margin);width:var(--gcds-button-mobile-width)}}}",fe=N(class extends E{constructor(){super(),this.__registerHost(),this.__attachShadow(),this.gcdsClick=z(this,"gcdsClick"),this.gcdsFocus=z(this,"gcdsFocus"),this.gcdsBlur=z(this,"gcdsBlur"),this.type="button",this.buttonRole="primary",this.size="regular",this.inheritedAttributes={},this.handleClick=e=>{let n=this.type==="submit"?this.value:this.type==="link"?this.href:void 0;if(P(e,this.gcdsClick,n)){if(!this.disabled&&this.type!="button"&&this.type!="link"){let a=this.el.closest("form");if(a){e.preventDefault();let i=document.createElement("button");i.type=this.type,this.name&&(i.name=this.name),this.value&&(i.value=this.value),i.style.display="none",a.appendChild(i),i.click(),i.remove()}}this.inheritedAttributes=G(this.el,this.shadowElement)}}}validateType(e){["submit","reset","button","link"].includes(e)||(this.type="button")}validateButtonRole(e){["start","primary","secondary","danger"].includes(e)?e==="start"&&this.size==="small"&&(this.size="regular"):this.buttonRole="primary"}validateSize(e){(!["regular","small"].includes(e)||this.buttonRole==="start")&&(this.size="regular")}validateDisabled(e){(e===!1||e===!0&&this.type==="link")&&this.el.removeAttribute("disabled")}updateLang(){new MutationObserver((n=>{n[0].oldValue!=this.el.lang&&(this.lang=this.el.lang)})).observe(this.el,tt)}componentWillLoad(){this.validateType(this.type),this.validateButtonRole(this.buttonRole),this.validateSize(this.size),this.validateDisabled(this.disabled),this.inheritedAttributes=G(this.el,this.shadowElement),this.lang=Z(this.el),this.updateLang()}render(){let{type:e,buttonRole:n,size:s,buttonId:a,disabled:i,lang:c,name:l,href:d,rel:o,target:r,download:h,value:g,inheritedAttributes:m}=this,v=e!="link"?"button":"a";return u(S,{key:"e9340ebfb8c10ce33a593b6b7f54394949317506"},u(v,Object.assign({key:"c62ba255b62ddbff1c3dbef61a4e64973df1bccb"},v==="button"?{type:e,ariaDisabled:i,name:l,value:g}:{href:d,rel:o,target:r,download:h},{id:a,onBlur:()=>this.gcdsBlur.emit(),onFocus:()=>this.gcdsFocus.emit(),onClick:w=>i?w.stopImmediatePropagation():this.handleClick(w),class:`gcds-button button--role-${n} button--${s}`,ref:w=>this.shadowElement=w},m,{part:"button"}),u("slot",{key:"f922fc8e16a85bce258204ff670bc6aaa81ca119"}),e==="link"&&r==="_blank"?u("gcds-icon",{name:"external",label:Dn[c].label,"margin-left":"150"}):null))}static get delegatesFocus(){return!0}get el(){return this}static get watchers(){return{type:["validateType"],buttonRole:["validateButtonRole"],size:["validateSize"],disabled:["validateDisabled"]}}static get style(){return In}},[17,"gcds-button",{type:[1025],buttonRole:[1025,"button-role"],size:[1025],buttonId:[1,"button-id"],name:[1],disabled:[516],value:[1],href:[1],rel:[1],target:[1],download:[1],inheritedAttributes:[32],lang:[32]},void 0,{type:["validateType"],buttonRole:["validateButtonRole"],size:["validateSize"],disabled:["validateDisabled"]}]);function pe(){if(typeof customElements>"u")return;["gcds-button","gcds-icon"].forEach((e=>{switch(e){case"gcds-button":customElements.get(e)||customElements.define(e,fe);break;case"gcds-icon":customElements.get(e)||et();break}}))}var ve=pe;[ae,le,me,ue,ve].forEach(t=>t());
+
+</script>
+<style>
+/* =========================================================
+   Demo page scaffolding (not part of the component)
+   ========================================================= */
+body {
+  margin: 0;
+  background: var(--gcds-bg-white);
+  color: var(--gcds-text-primary);
+  font: var(--gcds-font-text);
+}
+.demo-page { padding: var(--gcds-spacing-400); max-width: 46.5rem; }
+.demo-toc { margin: 0 0 var(--gcds-spacing-600); padding-left: var(--gcds-spacing-300); }
+.demo-link { color: var(--gcds-link-default); }
+.demo-state { margin-bottom: var(--gcds-spacing-800); scroll-margin-top: var(--gcds-spacing-300); }
+
+/* =========================================================
+   Summary card
+   Colours/sizing follow the Figma card, mapped to GC DS tokens
+   where one exists. Figma-only values are set as custom
+   properties so they are easy to swap.
+   ========================================================= */
+.md-summary-card {
+  --md-card-border: #b1b4b6;               /* Figma: Border/Default */
+  --md-badge-bg: #2962a3;                  /* Figma: background/info (white text = 6.3:1) */
+  --md-row-divider: var(--gcds-color-grayscale-300);
+  --md-gutter: var(--gcds-spacing-250);    /* 20px */
+
+  display: block;
+  max-width: 744px;                        /* PST max content width */
+  background: var(--gcds-bg-white);
+  border: 1px solid var(--md-card-border);
+}
+.md-summary-card:focus { outline: none; }
+.md-summary-card:focus-visible {
+  outline: var(--gcds-link-focus-outline-width, 0.125rem) solid var(--gcds-focus-border);
+  outline-offset: 0.125rem;
+}
+
+/* Header */
+.md-summary-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--md-gutter);
+  padding: var(--md-gutter);
+  background: var(--gcds-bg-light);
+}
+
+/* Badge (styled after the GC DS Card badge) */
+.md-summary-badge {
+  display: inline-block;
+  margin: 0;
+  padding: 0 var(--gcds-spacing-400);
+  background: var(--md-badge-bg);
+  color: var(--gcds-text-light, #fff);
+  font: var(--gcds-font-text-small);
+  font-weight: var(--gcds-font-weights-bold);
+  white-space: nowrap;
+}
+
+/* Description list: dt = question, dd = answer */
+.md-summary-list { margin: 0; padding: 0 var(--md-gutter); }
+.md-summary-row {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  border-bottom: 1px solid var(--md-row-divider);
+}
+.md-summary-row__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gcds-spacing-50);
+  padding: var(--gcds-spacing-125) var(--md-gutter) var(--gcds-spacing-125) 0;
+  font-weight: var(--gcds-font-weights-bold);
+}
+.md-summary-row__value {
+  margin: 0;
+  padding: var(--gcds-spacing-125) 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Lists (multiple files, multiple choices) */
+.md-summary-bullets { margin: 0; padding-left: var(--gcds-spacing-300); }
+
+/* File download links: GC DS link tokens */
+.md-file-download-link {
+  color: var(--gcds-link-default);
+  text-decoration-thickness: var(--gcds-link-decoration-thickness, 0.0625rem);
+  text-underline-offset: var(--gcds-link-underline-offset, 0.2em);
+}
+.md-file-download-link:visited { color: var(--gcds-link-visited); }
+.md-file-download-link:hover {
+  color: var(--gcds-link-hover);
+  text-decoration-thickness: var(--gcds-link-hover-decoration-thickness, 0.125rem);
+}
+
+/* Shared GC DS focus style for native links + buttons */
+.md-file-download-link:focus-visible,
+.md-summary-see-more:focus-visible {
+  outline: var(--gcds-link-focus-outline-width, 0.125rem) solid var(--gcds-focus-border);
+  outline-offset: var(--gcds-link-focus-outline-offset, 0.125rem);
+  background: var(--gcds-focus-background);
+  color: var(--gcds-focus-text);
+  text-decoration: none;
+  border-radius: var(--gcds-link-focus-border-radius, 0.125rem);
+  box-shadow: var(--gcds-link-focus-box-shadow, none);
+}
+
+/* Long text: See more / See less */
+.md-summary-longtext-value { display: block; }
+/* No CSS line-clamp: JS cuts the text in the DOM so screen readers match the screen */
+.md-summary-see-more {
+  margin-top: var(--gcds-spacing-150);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--gcds-link-default);
+  text-decoration: underline;
+  text-decoration-thickness: var(--gcds-link-decoration-thickness, 0.0625rem);
+  text-underline-offset: var(--gcds-link-underline-offset, 0.2em);
+  cursor: pointer;
+}
+.md-summary-see-more:hover {
+  color: var(--gcds-link-hover);
+  text-decoration-thickness: var(--gcds-link-hover-decoration-thickness, 0.125rem);
+}
+.md-summary-see-more[hidden] { display: none; }
+
+/* Answer history (GC DS Details) */
+.md-answer-history { padding-top: var(--gcds-spacing-150); }
+.md-answer-history gcds-details {
+  --gcds-details-panel-border-width: 0.25rem;
+  --gcds-details-panel-margin: var(--gcds-spacing-100) 0 0 0;
+  --gcds-details-panel-padding: var(--gcds-spacing-100) 0 var(--gcds-spacing-100) var(--md-gutter);
+}
+.md-history { margin: 0; display: flex; flex-direction: column; gap: var(--gcds-spacing-200); }
+.md-history__title {
+  font: var(--gcds-font-text-small);
+  font-weight: var(--gcds-font-weights-bold);
+}
+.md-history__detail { margin: 0; }
+.md-history__meta {
+  margin: 0;
+  font: var(--gcds-font-text-small);
+  color: var(--gcds-text-secondary);
+}
+.md-history__value { margin: 0; }
+
+/* Actions */
+.md-summary-actions { padding: var(--gcds-spacing-125) var(--md-gutter) var(--md-gutter); }
+.md-summary-edit-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: var(--gcds-spacing-125);
+  vertical-align: -0.2em;
+}
+
+/* Screen-reader-only text */
+.md-sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (forced-colors: active) {
+  .md-summary-badge { border: 1px solid CanvasText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* =========================================================
+   Walkthrough controls (test scaffolding, not the component)
+   ========================================================= */
+.walk-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--gcds-spacing-300);
+  margin: var(--gcds-spacing-300) 0 var(--gcds-spacing-500);
+}
+.walk-nav--bottom { margin: var(--gcds-spacing-500) 0 0; }
+.walk-count {
+  margin: 0;
+  font: var(--gcds-font-text);
+  font-weight: var(--gcds-font-weights-bold);
+}
+.walk-title {
+  margin: 0 0 var(--gcds-spacing-200);
+  font: var(--gcds-font-h2);
+  color: var(--gcds-text-primary);
+}
+.walk-title:focus { outline: none; }
+.walk-title:focus-visible {
+  outline: var(--gcds-link-focus-outline-width, 0.125rem) solid var(--gcds-focus-border);
+  outline-offset: 0.25rem;
+}
+.walk-desc { max-width: 46.5rem; margin-bottom: var(--gcds-spacing-500); }
+.walk-desc p { margin: 0 0 var(--gcds-spacing-200); font: var(--gcds-font-text); }
+
+/* =========================================================
+   Summary card: error states (GC DS danger tokens)
+   ========================================================= */
+.md-summary-card--error {
+  border: 0.25rem solid var(--gcds-danger-border);
+}
+.md-summary-error-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--gcds-spacing-100);
+  padding: var(--gcds-spacing-125) var(--gcds-spacing-200);
+  background: var(--gcds-danger-background);
+  color: var(--gcds-danger-text);
+}
+.md-summary-error-banner__icon { flex: none; width: 1.375rem; height: 1.25rem; }
+.md-summary-error-banner__text {
+  margin: 0;
+  font: var(--gcds-font-text);
+  font-weight: var(--gcds-font-weights-bold);
+}
+
+/* Row-level error message */
+.md-summary-error {
+  margin: 0;
+  font: var(--gcds-font-text);
+  color: var(--gcds-danger-text);
+}
+a.md-summary-error--link {
+  text-decoration: underline;
+  text-decoration-thickness: var(--gcds-link-decoration-thickness, 0.0625rem);
+  text-underline-offset: var(--gcds-link-underline-offset, 0.2em);
+}
+a.md-summary-error--link:hover {
+  text-decoration-thickness: var(--gcds-link-hover-decoration-thickness, 0.125rem);
+}
+a.md-summary-error--link:focus-visible {
+  outline: var(--gcds-link-focus-outline-width, 0.125rem) solid var(--gcds-focus-border);
+  outline-offset: var(--gcds-link-focus-outline-offset, 0.125rem);
+  background: var(--gcds-focus-background);
+  color: var(--gcds-focus-text);
+  text-decoration: none;
+  border-radius: var(--gcds-link-focus-border-radius, 0.125rem);
+}
+
+@media (forced-colors: active) {
+  .md-summary-card--error { border-color: CanvasText; }
+  .md-summary-error-banner { border-bottom: 1px solid CanvasText; }
+}
+
+/* =========================================================
+   Prototype notice: skip link + sticky banner
+   Copied from the PST prototype index page so every page matches.
+   (Custom component, based on the GC DS notice and details components.)
+   ========================================================= */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:300;background:#fff;color:var(--gcds-link-default);padding:12px 16px;font-size:18px;min-height:44px;}
+.skip-link:focus{left:0;}
+.sticky-banner{position:sticky;top:0;z-index:100;background:#FCEFCF;}
+.sticky-banner__inner{width:100%;max-width:1140px;margin:0 auto;padding:0 24px;display:flex;flex-direction:row;gap:14px;align-items:flex-start;box-sizing:border-box;}
+.sticky-banner__guideline{position:relative;flex:none;width:36px;align-self:stretch;}
+.sticky-banner__guideline::before,.sticky-banner__guideline::after{content:"";position:absolute;left:15px;width:8px;background:#AA7909;}
+.sticky-banner__guideline::before{top:0;height:18px;}
+.sticky-banner__guideline::after{top:54px;bottom:0;}
+.sticky-banner__icon{position:absolute;left:0;top:18px;width:36px;height:36px;color:#AA7909;}
+.sticky-banner__details{flex:1 1 auto;min-width:0;padding:6px 0 6px 0;}
+.sticky-banner__details > summary{display:flex;flex-direction:row;gap:16px;align-items:center;padding:8px;list-style:none;cursor:pointer;min-height:44px;font-size:20px;line-height:32px;color:#1F497A;text-decoration:underline;text-underline-offset:.15em;}
+.sticky-banner__details > summary::-webkit-details-marker{display:none;}
+.sticky-banner__details > summary:hover{color:var(--gcds-link-hover);}
+.sticky-banner__details > summary:focus-visible{outline:3px solid var(--gcds-focus-border);outline-offset:1px;}
+.sticky-banner__chevron{flex:none;width:18px;height:18px;color:#1F497A;transition:transform 150ms ease;}
+@media (prefers-reduced-motion:reduce){.sticky-banner__chevron{transition:none;}}
+.sticky-banner__details[open] > summary .sticky-banner__chevron{transform:rotate(90deg);}
+.sticky-banner__body{padding:0 14px 16px 42px;max-width:65ch;}
+.sticky-banner__body p{font-size:20px;line-height:32px;color:var(--gcds-text-primary);margin:0 0 12px;}
+.sticky-banner__body p:last-child{margin-bottom:0;}
+
+/* Line the page up with the other prototype pages (centred 1140px container) */
+.demo-page{max-width:1140px;margin:0 auto;padding:var(--gcds-spacing-400) 24px;box-sizing:border-box;}
+/* Keep focused content clear of the sticky banner when scrolled into view */
+html{scroll-padding-top:6rem;}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- Sticky banner: prototype notice (same as the other PST prototype pages). Closed by default. -->
+<div class="sticky-banner">
+  <div class="sticky-banner__inner">
+    <span class="sticky-banner__guideline"><svg class="sticky-banner__icon" viewBox="0 0 576 512" aria-hidden="true" fill="currentColor"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span>
+    <details class="sticky-banner__details">
+      <summary><svg class="sticky-banner__chevron" viewBox="0 0 320 512" aria-hidden="true" fill="currentColor"><path d="M285 273L91 467c-9 9-25 9-34 0l-22-22c-9-9-9-25 0-34l154-155L35 101c-9-9-9-25 0-34l22-22c9-9 25-9 34 0l194 194c9 9 9 25 0 34z"/></svg><span>This is an AI generated prototype</span></summary>
+      <div class="sticky-banner__body">
+        <p>This website was drafted by AI. It is a prototype for usability and accessibility testing only. Any information you enter will not be saved or submitted.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<main class="demo-page" id="main-content">
+<gcds-heading tag="h1" margin-top="0">Summary card walkthrough</gcds-heading>
+
+<nav class="walk-nav walk-nav--top" aria-label="Walkthrough states, top">
+  <gcds-button class="walk-back" type="button" button-role="secondary">Back</gcds-button>
+  <p class="walk-count">State 1 of 8</p>
+  <gcds-button class="walk-next" type="button" button-role="primary">Next</gcds-button>
+</nav>
+
+<section class="walk-state" aria-labelledby="walk-title">
+  <h2 class="walk-title" id="walk-title" tabindex="-1">State 1: Editable</h2>
+  <div class="walk-desc" id="walk-desc"><p>The applicant&#x27;s first set of answers. They have not been submitted yet and can be edited via the edit link.</p></div>
+  <div class="walk-stage" id="walk-stage"></div>
+</section>
+
+<nav class="walk-nav walk-nav--bottom" aria-label="Walkthrough states, bottom">
+  <gcds-button class="walk-back" type="button" button-role="secondary">Back</gcds-button>
+  <p class="walk-count">State 1 of 8</p>
+  <gcds-button class="walk-next" type="button" button-role="primary">Next</gcds-button>
+</nav>
+</main>
+
+<template id="walk-card-1">
+<section id="s1-section" class="md-summary-card review-focus-target" tabindex="-1" aria-labelledby="s1-header">
+<div class="md-summary-card__header">
+<gcds-heading id="s1-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+</div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s1-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s1-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0">Thompson River</gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div>
+</dl>
+<div class="md-summary-actions"><gcds-link href="#" data-noop><svg class="md-summary-edit-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 512 512"><path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>Edit step 5 - Site description</gcds-link></div>
+</section>
+</template>
+<template id="walk-card-2">
+<section id="s2-section" class="md-summary-card review-focus-target md-summary-card--error" tabindex="-1" aria-labelledby="s2-header" aria-describedby="s2-error">
+<div class="md-summary-card__header">
+<gcds-heading id="s2-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+</div>
+<div class="md-summary-error-banner" id="s2-error"><svg class="md-summary-error-banner__icon" aria-hidden="true" focusable="false" width="22" height="20" viewBox="0 0 576 512"><path fill="currentColor" d="M569.5 440C588 472 564.8 512 527.9 512H48.1c-36.9 0-60-40.1-41.6-72L246.4 24c18.5-32 64.7-32 83.2 0l239.9 416zM288 354c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3l7.4 136c.3 6.4 5.6 11.3 12 11.3h48.5c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"/></svg><p class="md-summary-error-banner__text">Step 5 - Site description contains errors</p></div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><a href="#" class="md-summary-error md-summary-error--link" data-noop><span class="md-sr-only">Small-scale site plan, </span>An answer is required</a></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s2-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s2-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span></dt><dd class="md-summary-row__value"><a href="#" class="md-summary-error md-summary-error--link" data-noop><span class="md-sr-only">Affected water body or watercourse, </span>An answer is required</a></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div>
+</dl>
+<div class="md-summary-actions"><gcds-link href="#" data-noop><svg class="md-summary-edit-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 512 512"><path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>Edit step 5 - Site description</gcds-link></div>
+</section>
+</template>
+<template id="walk-card-3">
+<section id="s3-section" class="md-summary-card review-focus-target" tabindex="-1" aria-labelledby="s3-header">
+<div class="md-summary-card__header">
+<gcds-heading id="s3-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+</div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s3-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s3-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0">Thompson River</gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div>
+</dl>
+</section>
+</template>
+<template id="walk-card-4">
+<section id="s4-section" class="md-summary-card review-focus-target md-summary-card--error" tabindex="-1" aria-labelledby="s4-header" aria-describedby="s4-error">
+<div class="md-summary-card__header">
+<gcds-heading id="s4-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+</div>
+<div class="md-summary-error-banner" id="s4-error"><svg class="md-summary-error-banner__icon" aria-hidden="true" focusable="false" width="22" height="20" viewBox="0 0 576 512"><path fill="currentColor" d="M569.5 440C588 472 564.8 512 527.9 512H48.1c-36.9 0-60-40.1-41.6-72L246.4 24c18.5-32 64.7-32 83.2 0l239.9 416zM288 354c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3l7.4 136c.3 6.4 5.6 11.3 12 11.3h48.5c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"/></svg><p class="md-summary-error-banner__text">Step 5 - Site description contains errors</p></div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span></dt><dd class="md-summary-row__value"><p class="md-summary-error">Answer requires review</p></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s4-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s4-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span></dt><dd class="md-summary-row__value"><p class="md-summary-error">Answer requires review</p></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div>
+</dl>
+</section>
+</template>
+<template id="walk-card-5">
+<section id="s5-section" class="md-summary-card review-focus-target md-summary-card--error" tabindex="-1" aria-labelledby="s5-header s5-header-badge" aria-describedby="s5-error">
+<div class="md-summary-card__header">
+<gcds-heading id="s5-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+<p class="md-summary-badge md-summary-badge--header" id="s5-header-badge">1 answer updated</p>
+</div>
+<div class="md-summary-error-banner" id="s5-error"><svg class="md-summary-error-banner__icon" aria-hidden="true" focusable="false" width="22" height="20" viewBox="0 0 576 512"><path fill="currentColor" d="M569.5 440C588 472 564.8 512 527.9 512H48.1c-36.9 0-60-40.1-41.6-72L246.4 24c18.5-32 64.7-32 83.2 0l239.9 416zM288 354c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3l7.4 136c.3 6.4 5.6 11.3 12 11.3h48.5c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"/></svg><p class="md-summary-error-banner__text">Step 5 - Site description contains errors</p></div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications-v2.pdf<span class="md-sr-only">, download file</span></a></gcds-text><div class="md-answer-history"><gcds-details id="s5-drawings-and-specifications-history" details-title="Show answer history" data-label="Drawings and specifications"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">drawings-and-specifications.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s5-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s5-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span></dt><dd class="md-summary-row__value"><a href="#" class="md-summary-error md-summary-error--link" data-noop><span class="md-sr-only">Affected water body or watercourse, </span>Answer requires review</a></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div>
+</dl>
+<div class="md-summary-actions"><gcds-link href="#" data-noop><svg class="md-summary-edit-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 512 512"><path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>Edit step 5 - Site description</gcds-link></div>
+</section>
+</template>
+<template id="walk-card-6">
+<section id="s6-section" class="md-summary-card review-focus-target" tabindex="-1" aria-labelledby="s6-header s6-header-badge">
+<div class="md-summary-card__header">
+<gcds-heading id="s6-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+<p class="md-summary-badge md-summary-badge--header" id="s6-header-badge">4 answers updated</p>
+</div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></li><li class="md-summary-bullets__item"><a href="#" download class="md-file-download-link">large-scale-site-plan-addendum.pdf<span class="md-sr-only">, download file</span></a></li></ul><div class="md-answer-history"><gcds-details id="s6-large-scale-site-plan-history" details-title="Show answer history" data-label="Large-scale site plan"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">large-scale-site-plan.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications-v2.pdf<span class="md-sr-only">, download file</span></a></gcds-text><div class="md-answer-history"><gcds-details id="s6-drawings-and-specifications-history" details-title="Show answer history" data-label="Drawings and specifications"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">drawings-and-specifications.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s6-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s6-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0">Thompson River, Mill Creek</gcds-text><div class="md-answer-history"><gcds-details id="s6-affected-water-body-or-watercourse-history" details-title="Show answer history" data-label="Affected water body or watercourse"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">Thompson River</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Wetlands</li></ul><div class="md-answer-history"><gcds-details id="s6-main-aquatic-habitat-type-history" details-title="Show answer history" data-label="Main aquatic habitat type"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div></dl></gcds-details></div></dd></div>
+</dl>
+<div class="md-summary-actions"><gcds-link href="#" data-noop><svg class="md-summary-edit-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 512 512"><path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>Edit step 5 - Site description</gcds-link></div>
+</section>
+</template>
+<template id="walk-card-7">
+<section id="s7-section" class="md-summary-card review-focus-target" tabindex="-1" aria-labelledby="s7-header s7-header-badge">
+<div class="md-summary-card__header">
+<gcds-heading id="s7-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+<p class="md-summary-badge md-summary-badge--header" id="s7-header-badge">4 answers updated</p>
+</div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></li><li class="md-summary-bullets__item"><a href="#" download class="md-file-download-link">large-scale-site-plan-addendum.pdf<span class="md-sr-only">, download file</span></a></li></ul><div class="md-answer-history"><gcds-details id="s7-large-scale-site-plan-history" details-title="Show answer history" data-label="Large-scale site plan"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">large-scale-site-plan.pdf</li><li class="md-summary-bullets__item">large-scale-site-plan-addendum.pdf</li></ul></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">large-scale-site-plan.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications-v2.pdf<span class="md-sr-only">, download file</span></a></gcds-text><div class="md-answer-history"><gcds-details id="s7-drawings-and-specifications-history" details-title="Show answer history" data-label="Drawings and specifications"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><p class="md-history__value">drawings-and-specifications-v2.pdf</p></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">drawings-and-specifications.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s7-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s7-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0">Thompson River, Mill Creek</gcds-text><div class="md-answer-history"><gcds-details id="s7-affected-water-body-or-watercourse-history" details-title="Show answer history" data-label="Affected water body or watercourse"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><p class="md-history__value">Thompson River, Mill Creek</p></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">Thompson River</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span><span class="md-summary-badge"><span class="md-sr-only">, </span>Updated</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Wetlands</li></ul><div class="md-answer-history"><gcds-details id="s7-main-aquatic-habitat-type-history" details-title="Show answer history" data-label="Main aquatic habitat type"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Wetlands</li></ul></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div></dl></gcds-details></div></dd></div>
+</dl>
+</section>
+</template>
+<template id="walk-card-8">
+<section id="s8-section" class="md-summary-card review-focus-target" tabindex="-1" aria-labelledby="s8-header">
+<div class="md-summary-card__header">
+<gcds-heading id="s8-header" tag="h3" margin-top="0" margin-bottom="0">Step 5 - Site description</gcds-heading>
+</div>
+<dl class="md-summary-list">
+<div class="md-summary-row" data-row-key="large-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Large-scale site plan</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item"><a href="#" download class="md-file-download-link">large-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></li><li class="md-summary-bullets__item"><a href="#" download class="md-file-download-link">large-scale-site-plan-addendum.pdf<span class="md-sr-only">, download file</span></a></li></ul><div class="md-answer-history"><gcds-details id="s8-large-scale-site-plan-history" details-title="Show answer history" data-label="Large-scale site plan"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">large-scale-site-plan.pdf</li><li class="md-summary-bullets__item">large-scale-site-plan-addendum.pdf</li></ul></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">large-scale-site-plan.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="drawings-and-specifications"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Drawings and specifications</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">drawings-and-specifications-v2.pdf<span class="md-sr-only">, download file</span></a></gcds-text><div class="md-answer-history"><gcds-details id="s8-drawings-and-specifications-history" details-title="Show answer history" data-label="Drawings and specifications"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><p class="md-history__value">drawings-and-specifications-v2.pdf</p></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">drawings-and-specifications.pdf</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="small-scale-site-plan"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Small-scale site plan</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0"><a href="#" download class="md-file-download-link">small-scale-site-plan.pdf<span class="md-sr-only">, download file</span></a></gcds-text></dd></div>
+<div class="md-summary-row" data-row-key="directions-to-site"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Directions to site</span></dt><dd class="md-summary-row__value"><div class="md-summary-longtext" data-summary-longtext data-label="Directions to site"><gcds-text id="s8-directions-to-site-value" class="md-summary-longtext-value" margin-top="0" margin-bottom="0">From Highway 5, take Exit 12 toward Thompson River Road. Continue north for 3.2 km, then turn right onto Old Mill Lane. The site entrance is 500 m ahead on the left, marked by a gravel access road. GPS coordinates: 50.6745° N, 120.3273° W.</gcds-text><button type="button" class="md-summary-see-more" aria-controls="s8-directions-to-site-value" aria-expanded="false" hidden>See more</button></div></dd></div>
+<div class="md-summary-row" data-row-key="affected-water-body-or-watercourse"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Affected water body or watercourse</span></dt><dd class="md-summary-row__value"><gcds-text margin-top="0" margin-bottom="0">Thompson River, Mill Creek</gcds-text><div class="md-answer-history"><gcds-details id="s8-affected-water-body-or-watercourse-history" details-title="Show answer history" data-label="Affected water body or watercourse"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><p class="md-history__value">Thompson River, Mill Creek</p></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><p class="md-history__value">Thompson River</p></dd></div></dl></gcds-details></div></dd></div>
+<div class="md-summary-row" data-row-key="main-aquatic-habitat-type"><dt class="md-summary-row__label"><span class="md-summary-row__label-text">Main aquatic habitat type</span></dt><dd class="md-summary-row__value"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Wetlands</li></ul><div class="md-answer-history"><gcds-details id="s8-main-aquatic-habitat-type-history" details-title="Show answer history" data-label="Main aquatic habitat type"><dl class="md-history"><div class="md-history__entry"><dt class="md-history__title">Submission 2 (current) - September 24, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Wetlands</li></ul></dd></div><div class="md-history__entry"><dt class="md-history__title">Submission 1 - August 14, 2026</dt><dd class="md-history__detail"><ul class="md-summary-bullets"><li class="md-summary-bullets__item">River</li><li class="md-summary-bullets__item">Lake</li></ul></dd></div></dl></gcds-details></div></dd></div>
+</dl>
+</section>
+</template>
+
+<script>
+window.WALK_STATES = [{"title": "Editable", "desc": ["The applicant's first set of answers. They have not been submitted yet and can be edited via the edit link."]}, {"title": "Editable with errors", "desc": ["The applicant's first set of answers. Errors have been found and are being flagged for resolution before submission. They have not been submitted yet and can be edited via the edit link."]}, {"title": "Review", "desc": ["The applicant's first set of answers. They have been submitted and can no longer be edited from the component. They are in a read-only state."]}, {"title": "Review with errors", "desc": ["The applicant's first set of answers. They have been submitted and can no longer be edited from the component. They are in a read-only state.", "Errors have been found by reviewers. They are being flagged for resolution by applicant."]}, {"title": "Updating with errors", "desc": ["The applicant has re-opened the submitted application to resolve the errors by updating their answers."]}, {"title": "Updating", "desc": ["The applicant has re-opened the submitted application and has updated several of their answers. All errors have been resolved. Updated answers have not been submitted yet."]}, {"title": "Re-submitted review", "desc": ["The applicant has successfully re-submitted the application after updating several of their answers. Answers can no longer be edited from the component. They are in a read-only state."]}, {"title": "Review summary", "desc": ["The applicant has come to review their application that they had previously re-submitted after updating several of their answers. Answers can no longer be edited from the component. They are in a read-only state."]}];
+/**
+ * Summary card behaviour + walkthrough controls
+ *
+ * 1. See more / See less (long answers)
+ *    - When collapsed, the answer holds only the words that are shown,
+ *      so screen readers stop at the ellipsis. See the section below.
+ *    - A real <button> with aria-expanded and aria-controls.
+ *    - The accessible name follows the annotation: "See more of [label]".
+ *      It starts with the visible text (WCAG 2.5.3 Label in Name).
+ *    - The button is hidden when the answer isn't cut off.
+ *
+ * 2. Answer history (GC DS Details)
+ *    - Always closed on load.
+ *    - The visible title switches between "Show answer history" and
+ *      "Hide answer history".
+ *    - The accessible name follows the annotation: "Show answer history of
+ *      [label]". gcds-details has no aria-label prop, so it is set on the
+ *      component's internal <button> (open shadow root).
+ *      Production note: this relies on gcds-details internals. See the
+ *      handoff notes.
+ */
+(function () {
+  const lower = (s) => s.charAt(0).toLowerCase() + s.slice(1);
+  let observers = [];   // disconnected whenever the card is swapped
+
+  /* ---------- See more / See less ---------- */
+  /*
+   * The answer is cut in the DOM, not only visually. When collapsed,
+   * the text holds only the words that fit in MAX_LINES, plus an
+   * ellipsis. Screen readers stop at the same place sighted users do,
+   * then reach the "See more" button. Expanding puts the full text back.
+   * (CSS line-clamp hides text visually, but screen readers still read it.)
+   */
+  const MAX_LINES = 5;
+  const ELLIPSIS = '\u2026';
+
+  function lineCount(value) {
+    const p = (value.shadowRoot && value.shadowRoot.querySelector('[part="text"]')) || value;
+    const lh = parseFloat(getComputedStyle(p).lineHeight) || 32;
+    return Math.round(p.getBoundingClientRect().height / lh);
+  }
+
+  // Longest word-boundary prefix that fits in MAX_LINES with the ellipsis
+  function truncate(value, full) {
+    value.textContent = full;
+    if (lineCount(value) <= MAX_LINES) return null;          // fits, no truncation
+    const words = full.split(/\s+/);
+    let lo = 1, hi = words.length - 1, best = 1;
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      value.textContent = words.slice(0, mid).join(' ') + ELLIPSIS;
+      if (lineCount(value) <= MAX_LINES) { best = mid; lo = mid + 1; } else { hi = mid - 1; }
+    }
+    return words.slice(0, best).join(' ').replace(/[\s.,;:]+$/, '') + ELLIPSIS;
+  }
+
+  function initSeeMore(wrapper) {
+    const btn = wrapper.querySelector('.md-summary-see-more');
+    const value = btn && document.getElementById(btn.getAttribute('aria-controls'));
+    if (!value) return;
+    const label = lower(wrapper.dataset.label || '');
+    const full = value.textContent.trim();
+    let short = null;
+    let expanded = false;
+
+    const render = () => {
+      value.textContent = expanded || !short ? full : short;
+      const text = expanded ? 'See less' : 'See more';
+      btn.textContent = text;
+      btn.setAttribute('aria-expanded', String(expanded));
+      btn.setAttribute('aria-label', label ? `${text} of ${label}` : text);
+      btn.hidden = !short;                                   // nothing hidden, no button
+    };
+
+    const measure = () => { short = truncate(value, full); render(); };
+
+    btn.addEventListener('click', () => { expanded = !expanded; render(); });
+
+    measure();
+    // Re-measure when web fonts finish loading or the column width changes
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    let lastWidth = wrapper.clientWidth;
+    const ro = new ResizeObserver(() => {
+      if (!wrapper.isConnected) return;
+      if (wrapper.clientWidth !== lastWidth) { lastWidth = wrapper.clientWidth; measure(); }
+    });
+    ro.observe(wrapper);
+    observers.push(ro);
+  }
+
+  /* ---------- Answer history (gcds-details) ---------- */
+  function initHistory(details) {
+    const label = lower(details.dataset.label || '');
+
+    const sync = () => {
+      const open = details.hasAttribute('open');
+      const title = open ? 'Hide answer history' : 'Show answer history';
+      if (details.getAttribute('details-title') !== title) {
+        details.setAttribute('details-title', title);
+      }
+      const btn = details.shadowRoot && details.shadowRoot.querySelector('button');
+      if (btn) btn.setAttribute('aria-label', label ? `${title} of ${label}` : title);
+    };
+
+    // Closed by default, whatever the markup says
+    details.removeAttribute('open');
+    sync();
+
+    // "open" is reflected by gcds-details, so watch the attribute
+    const mo = new MutationObserver(sync);
+    mo.observe(details, { attributes: true, attributeFilter: ['open'] });
+    observers.push(mo);
+  }
+
+  /* ---------- Set up one rendered card ---------- */
+  async function initCard(root) {
+    const els = root.querySelectorAll('gcds-text, gcds-details, gcds-heading, gcds-link');
+    await Promise.all([...els].map((el) => (el.componentOnReady ? el.componentOnReady() : null)));
+    await new Promise((r) => requestAnimationFrame(r));
+    root.querySelectorAll('[data-summary-longtext]').forEach(initSeeMore);
+    root.querySelectorAll('.md-answer-history gcds-details').forEach(initHistory);
+  }
+
+  /* ---------- Links that go nowhere in this test ---------- */
+  // Error links, file links and the edit link are real, keyboard-operable
+  // links, but for the usability test they do nothing when activated.
+  document.addEventListener('click', (ev) => {
+    const path = ev.composedPath();
+    const a = path.find((n) => n.tagName === 'A');
+    const host = path.find((n) => n.nodeType === 1 && n.closest && n.closest('#walk-stage'));
+    if (a && host && (a.getAttribute('href') === '#' || a.getAttribute('href') === '')) ev.preventDefault();
+  });
+
+  /* ---------- Walkthrough: Back / Next ---------- */
+  /*
+   * One card on the page. Back and Next swap in the markup for each state
+   * (from <template id="walk-card-N">), then update the state title and
+   * description. Focus moves to the state title, so screen reader users
+   * hear which state they are on. The URL hash (#state-3) is kept in sync,
+   * so the facilitator can reload or open a state directly.
+   */
+  const STATES = window.WALK_STATES || [];
+  const stage = document.getElementById('walk-stage');
+  const titleEl = document.getElementById('walk-title');
+  const descEl = document.getElementById('walk-desc');
+  // Back/Next appear twice (top and bottom of the page); keep both sets in sync
+  const countEls = [...document.querySelectorAll('.walk-count')];
+  const backBtns = [...document.querySelectorAll('.walk-back')];
+  const nextBtns = [...document.querySelectorAll('.walk-next')];
+  let current = 0;
+
+  function fromHash() {
+    const m = /^#state-(\d+)$/.exec(location.hash);
+    const n = m ? parseInt(m[1], 10) - 1 : 0;
+    return Math.min(Math.max(n, 0), STATES.length - 1);
+  }
+
+  async function show(i, moveFocus) {
+    current = i;
+    const s = STATES[i];
+    observers.forEach((o) => o.disconnect());
+    observers = [];
+
+    titleEl.textContent = `State ${i + 1}: ${s.title}`;
+    descEl.replaceChildren(...s.desc.map((t) => Object.assign(document.createElement('p'), { textContent: t })));
+    countEls.forEach((c) => { c.textContent = `State ${i + 1} of ${STATES.length}`; });
+    document.title = `State ${i + 1}: ${s.title} - Summary card walkthrough`;
+    history.replaceState(null, '', `#state-${i + 1}`);
+
+    const tpl = document.getElementById(`walk-card-${i + 1}`);
+    stage.replaceChildren(tpl.content.cloneNode(true));
+    if (moveFocus) titleEl.focus();   // also scrolls the new state's title into view
+    await initCard(stage);
+  }
+
+  async function boot() {
+    if (window.customElements) {
+      await Promise.race([
+        Promise.all(['gcds-text', 'gcds-details', 'gcds-button'].map((t) => customElements.whenDefined(t))),
+        new Promise((r) => setTimeout(r, 3000))
+      ]);
+    }
+    // Wraps around: Back on the first state goes to the last, Next on the last goes to the first
+    const n = STATES.length;
+    backBtns.forEach((b) => b.addEventListener('click', () => show((current - 1 + n) % n, true)));
+    nextBtns.forEach((b) => b.addEventListener('click', () => show((current + 1) % n, true)));
+    window.addEventListener('hashchange', () => { const n = fromHash(); if (n !== current) show(n, true); });
+    show(fromHash(), false);
+  }
+  boot();
+})();
+
+</script>
+</body>
+</html>
