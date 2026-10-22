@@ -1,2 +1,2 @@
 # pst
-Prototypes for PST usability testing
+Prototypes for usability testing
